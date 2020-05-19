@@ -1,0 +1,48 @@
+{
+	"codeintel": true,
+	"codeintel_database_dir": "~/.cache/codeintel",
+
+	/*
+	An array of language names which are enabled.
+	*/
+	"codeintel_enabled_languages":
+	[
+		"JavaScript", "SCSS", "Python", "HTML",
+		"Ruby", "Python3", "XML", "Sass", "HTML5", "Perl", "CSS",
+		"Twig", "Less", "Node.js", "TemplateToolkit", "PHP"
+	],
+
+	/*
+	Maps syntax names to languages. This allows variations on a syntax
+	(for example "Python (Django)") to be used. The key is
+	the base filename of the .tmLanguage syntax files, and the value
+	is the syntax it maps to.
+	*/
+	"codeintel_syntax_map":
+	{
+		"Python Django": "Python"
+	},
+
+
+	/* ####################################################################### */
+	/* the following settings can be overridden for each language individually */
+	/* see "codeintel_language_settings" below!                                */
+	/* ####################################################################### */
+
+	"codeintel_live": false,
+	"codeintel_tooltips": "popup",
+	"codeintel_word_completions": "buffer",
+
+	/*
+	Insert functions snippets.
+	*/
+	"codeintel_snippets": true,
+
+	"codeintel_scan_exclude_dir":[],
+
+	/* Code Scanning: Controls how the Code Intelligence system scans your source code files. */
+	"codeintel_max_recursive_dir_depth": 10,
+
+	/* Include all files and directories from the project base directory: */
+	"codeintel_scan_files_in_project": true,
+}
