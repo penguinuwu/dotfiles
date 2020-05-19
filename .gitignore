@@ -1,0 +1,20 @@
+/*
+!/README.md
+!/.gitignore
+!/fehbg
+!/gtk-2.0/
+!/gtk-3.0/
+!/i3/
+!/i3blocks/
+/i3blocks/network
+!/kitty/
+!/linopen/
+!/sublime-text-3/
+/sublime-text-3/*
+!/sublime-text-3/Installed\ Packages/
+!/sublime-text-3/Packages/
+/sublime-text-3/Packages/*
+!/sublime-text-3/Packages/User/
+/sublime-text-3/Packages/User/*.cache/
+!/X11/
+!/xinit/
