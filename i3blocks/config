@@ -17,13 +17,20 @@
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
-min_width=830
+min_width=700
 
 [network]
 align=center
 command=$HOME/scripts/network-info
 interval=5
 min_width=120
+
+[scratchpad]
+align=center
+command=$HOME/scripts/scratchpad-show -c
+interval=once
+signal=3
+min_width=50
 
 [brightness]
 align=center
@@ -41,17 +48,16 @@ min_width=60
 
 [temp]
 align=center
-command=echo $(acpi -t | perl -pe 's/^.*?(\d+)\..*$/$1°C/')
+command=$HOME/scripts/temperature-info
 interval=5
 min_width=50
 
 [battery]
 align=center
-command=echo "$(acpi -b | perl -pe 's/^.*?([CDN]).*?(\d+%),?(.\d+:\d+)?.*?$/$1 $2$3/') $(awk '{printf "%.0fW", $1*10^-6}' /sys/class/power_supply/BAT0/power_now)"
+command=$HOME/scripts/battery-info
 interval=5
 min_width=150
 
 [padding]
 full_text=""
 interval=once
-min_width=0

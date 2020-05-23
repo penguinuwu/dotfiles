@@ -3,7 +3,7 @@
 
 set $mod Mod4
 
-font pango:Hack 11
+font pango:Hack Nerd Font 11
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -78,18 +78,17 @@ client.placeholder		$foreground	$background	$foreground	$background	$background
 client.background		$background
 
 # scratchpad
-bindsym $mod+z move scratchpad
-bindsym $mod+shift+z scratchpad show floating disable
-# TODO: rofi scratchpad
-#bindsym $mod+shift+z exec --no-startup-id rofi -modi window -show window
+bindsym $mod+z move scratchpad exec --no-startup-id pkill -SIGRTMIN+3 i3blocks
+bindsym $mod+shift+z exec --no-startup-id scratchpad-show -d
 
 # kill focused window
 bindsym $mod+shift+q kill
 
 # start dmenu or rofi
-#bindsym $mod+shift+d exec --no-startup-id dmenu_run
-bindsym $mod+shift+d exec --no-startup-id rofi -modi drun#window#run -show drun
-bindsym $mod+shift+Return exec --no-startup-id rofi -modi drun#window#run -show drun
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -p "exec:" -l 10
+#bindsym $mod+shift+d exec --no-startup-id rofi -modi drun#window#run -show drun
+bindsym $mod+shift+Return exec --no-startup-id dmenu_run -i -p "exec:" -l 10
+#bindsym $mod+shift+Return exec --no-startup-id rofi -modi drun#window#run -show drun
 
 # focus
 bindsym $mod+h focus left
@@ -260,7 +259,7 @@ bar {
 	separator_symbol "|"
 	status_command i3blocks
 
-	font pango:Hack 11.5
+	font pango:Hack Nerd Font 11.5
 	colors {
 		background $background
 		statusline $foreground

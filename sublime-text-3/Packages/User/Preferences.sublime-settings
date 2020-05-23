@@ -5,11 +5,12 @@
 	"caret_style": "blink",
 	"color_scheme": "Packages/Theme - Spaceblack/Color Schemes/Spaceblack-Monokai-Black.tmTheme",
 	"draw_minimap_border": true,
-	"font_face": "Hack",
+	"font_face": "Hack Nerd Font",
 	"font_size": 11,
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"LaTeXTools",
 		"Vintage"
 	],
 	"line_numbers": true,
@@ -26,6 +27,7 @@
 	"overlay_scroll_bars": "disabled",
 	"scroll_past_end": false,
 	"show_errors_inline": false,
+	"show_git_status": false,
 	"show_panel_on_build": false,
 	"theme": "Material-Theme.sublime-theme"
 }
