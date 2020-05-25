@@ -53,24 +53,6 @@ URxvt*borderColor:  [100]#000000
 *.color15: #FFFFFF
 *color15:  #FFFFFF
 
-! old
-!*color0:  #F29AC0
-!*color1:  #FEDDB4
-!*color2:  #EDEEA2
-!*color3:  #B9DB9F
-!*color4:  #B0DDD6
-!*color5:  #9DDAEC
-!*color6:  #C1ACD3
-!*color7:  #404040
-!*color8:   #EC1C5A
-!*color9:   #F58023
-!*color10:  #FAE83E
-!*color11:  #9CC841
-!*color12:  #46BEA2
-!*color13:  #3D81C2
-!*color14:  #644B9E
-!*color15:  #ECE0DF
-
 ! Black color that will not be affected by bold highlighting.
 *.color66: #000000
 *color66:  #000000
@@ -105,23 +87,3 @@ Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
-
-! rofi
-! Enable the extended coloring options
-rofi.color-enabled: true
-!                  bg       border   separator
-rofi.color-window: #000000, #FFFFFF, #A4989D
-!                  bg       fg       bg-alt   hl-bg    hl-fg
-rofi.color-normal: #000000, #FFFFFF, #000000, #A4989D, #000000
-rofi.color-active: #000000, #FFFFFF, #000000, #A4989D, #000000
-rofi.color-urgent: #000000, #FFFFFF, #000000, #A4989D, #000000
-
-rofi.separator-style: solid
-rofi.sidebar-mode: true
-rofi.lines: 10
-rofi.font: Hack Regular 12
-rofi.bw: 1
-rofi.columns: 1
-rofi.padding: 5
-rofi.fixed-num-lines: true
-rofi.hide-scrollbar: true

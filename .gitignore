@@ -9,6 +9,7 @@
 /i3blocks/network
 !/kitty/
 !/linopen/
+!/rofi
 !/sublime-text-3/
 /sublime-text-3/*
 !/sublime-text-3/Installed\ Packages/
