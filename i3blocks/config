@@ -17,7 +17,7 @@
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
-min_width=700
+min_width=664
 
 [network]
 align=center
@@ -27,7 +27,7 @@ min_width=120
 
 [scratchpad]
 align=center
-command=$HOME/scripts/scratchpad-show -c
+command=$HOME/scripts/scratchpad-info
 interval=once
 signal=3
 min_width=50
@@ -58,6 +58,8 @@ command=$HOME/scripts/battery-info
 interval=5
 min_width=150
 
-[padding]
-full_text=""
+[power]
+align=center
+full_text=" "
+command=([[ $button -eq 3 ]] && xset-everything) || ([[ $button -gt 0 ]] && power-thing-menu)
 interval=once
