@@ -61,5 +61,5 @@ min_width=150
 [power]
 align=center
 full_text=" "
-command=([[ $button -eq 3 ]] && xset-everything) || ([[ $button -gt 0 ]] && power-thing-menu)
+command=([[ $button -eq 3 ]] && xset-everything) || ([[ $button -gt 0 ]] && i3-msg -q exec power-thing-menu)
 interval=once

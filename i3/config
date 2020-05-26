@@ -29,14 +29,15 @@ floating_modifier $mod
 #exec --no-startup-id xrandr | grep 'HDMI2 connected' && xrandr --output eDP1 --auto --output HDMI2 --auto --left-of eDP1
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+d exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+d exec kitty
+bindsym $mod+Return exec kitty
+bindsym $mod+KP_Enter exec kitty
 
 # screenshot
-#bindsym $mod+shift+s --release exec --no-startup-id import png:- | xclip -sel clipboard -t image/png
-bindsym $mod+shift+s --release exec --no-startup-id scrot -osf /tmp/scrot_temp -e 'xclip -sel clipboard -t "image/png" < /tmp/scrot_temp' && rm /tmp/scrot_temp
+#bindsym $mod+Shift+s --release exec --no-startup-id import png:- | xclip -sel clipboard -t image/png
+bindsym $mod+Shift+s --release exec --no-startup-id scrot -osf /tmp/scrot_temp -e 'xclip -sel clipboard -t "image/png" < /tmp/scrot_temp' && rm /tmp/scrot_temp
 bindsym Print --release exec --no-startup-id import -window root png:- | xclip -sel clipboard -t image/png
 
 # gaps
@@ -44,6 +45,7 @@ bindsym Print --release exec --no-startup-id import -window root png:- | xclip -
 #gaps outer 0
 #smart_gaps inverse_outer
 #smart_gaps on
+gaps top 2
 
 # borders
 default_border pixel 1
@@ -80,16 +82,16 @@ client.background		$background
 
 # scratchpad
 bindsym $mod+z move scratchpad exec --no-startup-id pkill -SIGRTMIN+3 i3blocks
-bindsym $mod+shift+z exec --no-startup-id scratchpad-menu
+bindsym $mod+Shift+z exec --no-startup-id scratchpad-menu
 
 # kill focused window
-bindsym $mod+shift+q kill
+bindsym $mod+Shift+q kill
 
 # start dmenu or rofi
-#bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -p "exec:" -l 10
-bindsym $mod+shift+d exec --no-startup-id rofi -show drun
-#bindsym $mod+shift+Return exec --no-startup-id dmenu_run -i -p "exec:" -l 10
-bindsym $mod+shift+Return exec --no-startup-id rofi -show drun
+#bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -p "exec:" -l 10
+bindsym $mod+Shift+d exec --no-startup-id rofi -show drun
+#bindsym $mod+Shift+Return exec --no-startup-id dmenu_run -i -p "exec:" -l 10
+bindsym $mod+Shift+Return exec --no-startup-id rofi -show drun
 
 # focus
 bindsym $mod+h focus left
@@ -107,24 +109,24 @@ bindsym $mod+KP_Down focus down
 bindsym $mod+KP_Up focus up
 bindsym $mod+KP_Right focus right
 
-bindsym $mod+shift+Tab focus left
+bindsym $mod+Shift+Tab focus left
 bindsym $mod+Tab focus right
 
 # move
-bindsym $mod+shift+h move left
-bindsym $mod+shift+j move down
-bindsym $mod+shift+k move up
-bindsym $mod+shift+l move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
-bindsym $mod+shift+Left move left
-bindsym $mod+shift+Down move down
-bindsym $mod+shift+Up move up
-bindsym $mod+shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-bindsym $mod+shift+KP_Left move left
-bindsym $mod+shift+KP_Down move down
-bindsym $mod+shift+KP_Up move up
-bindsym $mod+shift+KP_Right move right
+bindsym $mod+Shift+KP_Left move left
+bindsym $mod+Shift+KP_Down move down
+bindsym $mod+Shift+KP_Up move up
+bindsym $mod+Shift+KP_Right move right
 
 # split
 bindsym $mod+g split h
@@ -139,7 +141,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -148,7 +150,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-bindsym $mod+shift+a focus child
+bindsym $mod+Shift+a focus child
 #bindsym $mod+d focus child
 
 # default workspaces
@@ -192,37 +194,37 @@ bindsym $mod+KP_Next workspace next
 bindsym $mod+KP_Prior workspace prev
 
 # move focused container to workspace
-bindsym $mod+shift+grave move container to workspace number $ws0
-bindsym $mod+shift+1 move container to workspace number $ws1
-bindsym $mod+shift+2 move container to workspace number $ws2
-bindsym $mod+shift+3 move container to workspace number $ws3
-bindsym $mod+shift+4 move container to workspace number $ws4
-bindsym $mod+shift+5 move container to workspace number $ws5
-bindsym $mod+shift+6 move container to workspace number $ws6
-bindsym $mod+shift+7 move container to workspace number $ws7
-bindsym $mod+shift+8 move container to workspace number $ws8
-bindsym $mod+shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+grave move container to workspace number $ws0
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
 
-bindsym $mod+shift+KP_0 move container to workspace number $ws0
-bindsym $mod+shift+KP_1 move container to workspace number $ws1
-bindsym $mod+shift+KP_2 move container to workspace number $ws2
-bindsym $mod+shift+KP_3 move container to workspace number $ws3
-bindsym $mod+shift+KP_4 move container to workspace number $ws4
-bindsym $mod+shift+KP_5 move container to workspace number $ws5
-bindsym $mod+shift+KP_6 move container to workspace number $ws6
-bindsym $mod+shift+KP_7 move container to workspace number $ws7
-bindsym $mod+shift+KP_8 move container to workspace number $ws8
-bindsym $mod+shift+KP_9 move container to workspace number $ws9
+bindsym $mod+Shift+KP_0 move container to workspace number $ws0
+bindsym $mod+Shift+KP_1 move container to workspace number $ws1
+bindsym $mod+Shift+KP_2 move container to workspace number $ws2
+bindsym $mod+Shift+KP_3 move container to workspace number $ws3
+bindsym $mod+Shift+KP_4 move container to workspace number $ws4
+bindsym $mod+Shift+KP_5 move container to workspace number $ws5
+bindsym $mod+Shift+KP_6 move container to workspace number $ws6
+bindsym $mod+Shift+KP_7 move container to workspace number $ws7
+bindsym $mod+Shift+KP_8 move container to workspace number $ws8
+bindsym $mod+Shift+KP_9 move container to workspace number $ws9
 
-bindsym $mod+shift+Next move container to workspace next
-bindsym $mod+shift+Prior move container to workspace prev
-bindsym $mod+shift+KP_Next move container to workspace next
-bindsym $mod+shift+KP_Prior move container to workspace prev
+bindsym $mod+Shift+Next move container to workspace next
+bindsym $mod+Shift+Prior move container to workspace prev
+bindsym $mod+Shift+KP_Next move container to workspace next
+bindsym $mod+Shift+KP_Prior move container to workspace prev
 
 # reload the configuration file
-bindsym $mod+shift+c reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace
-bindsym $mod+shift+r restart
+bindsym $mod+Shift+r restart
 
 # resize window
 bindsym $mod+control+h resize shrink width 10 px or 10 ppt
@@ -242,8 +244,8 @@ set $pt $HOME/scripts/power-thing
 bindsym $mod+Escape exec --no-startup-id $ptd
 bindsym XF86PowerOff exec --no-startup-id $ptd
 bindsym $mod+p exec --no-startup-id $pt lock
-bindsym $mod+XF86PowerOff exec --no-startup-id $pt suspend
-bindsym $mod+shift+XF86PowerOff exec --no-startup-id $pt hibernate
+#bindsym $mod+XF86PowerOff exec --no-startup-id $pt suspend
+#bindsym $mod+Shift+XF86PowerOff exec --no-startup-id $pt hibernate
 
 # compton no
 #exec --no-startup-id picom
