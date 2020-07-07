@@ -1,8 +1,0 @@
-{
-	"disabled_menuitem_empty": false,
-
-	//one of this list: firefox, firefox-developer-edition, chrome, canary, chromium, opera, safari, ie, edge
-	"default_browser": "firefox",
-
-	"i_donated_to_sidebar_enhancements_developer": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DD4SL2AHYJGBW"
-}
