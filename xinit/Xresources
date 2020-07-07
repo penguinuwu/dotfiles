@@ -40,18 +40,18 @@ URxvt*borderColor:  [100]#000000
 ! Colors 8-15.
 *.color8:  #999999
 *color8:   #999999
-*.color9:  #E06666
-*color9:   #E06666
-*.color10: #93C47D
-*color10:  #93C47D
-*.color11: #F6B26B
-*color11:  #F6B26B
-*.color12: #6D9EEB
-*color12:  #6D9EEB
-*.color13: #8E7CC3
-*color13:  #8E7CC3
-*.color14: #76A5AF
-*color14:  #76A5AF
+*.color9:  #FF0000
+*color9:   #FF0000
+*.color10: #00FF00
+*color10:  #00FF00
+*.color11: #FF9900
+*color11:  #FF9900
+*.color12: #4A86E8
+*color12:  #4A86E8
+*.color13: #9900FF
+*color13:  #9900FF
+*.color14: #00FFFF
+*color14:  #00FFFF
 *.color15: #F3F3F3
 *color15:  #F3F3F3
 
@@ -67,11 +67,16 @@ URxvt*borderColor:  [100]#000000
 !XClock*hourColor:   rgba:ec/e0/df/ff
 !XClock*minuteColor: rgba:ec/e0/df/ff
 !XClock*secondColor: rgba:ec/e0/df/ff
-
+	
 ! Set depth to make transparency work.
-! but no urxvt
 !URxvt*depth: 32
-!URxvt.font: xft:Hack:size=10
+URxvt*font: xft:Hack Nerd Font:size=12
+URxvt*scrollBar: false
+URxvt*saveLines: 1000
+URxvt*internalBorder: 4
+URxvt*externalBorder: 0
+URxvt*iso14755: false
+URxvt*iso14755_52: false
 
 XTerm*pointerColor: #FFFFFF
 XTerm*faceSize: 11
