@@ -54,10 +54,10 @@ configuration {
 /*	click-to-exit: true;*/
 /*	show-match: true;*/
 /*	theme: ;*/
-	color-normal: "#000000, #FFFFFF, #000000, #ECE0DF, #000000";
-	color-urgent: "#000000, #FFFFFF, #000000, #ECE0DF, #000000";
-	color-active: "#000000, #FFFFFF, #000000, #ECE0DF, #000000";
-	color-window: "#000000, #FFFFFF, #ECE0DF";
+	color-normal: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-urgent: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-active: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-window: "#000000, #FFFFFF, #D9D9D9";
 	max-history-size: 0;
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
@@ -93,8 +93,8 @@ configuration {
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
-/*	kb-row-up: "Up,Control+p,ISO_Left_Tab";*/
-/*	kb-row-down: "Down,Control+n";*/
+	kb-row-up: "Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
+	kb-row-down: "Down,Control+n,Super+Tab";
 /*	kb-row-tab: "Tab";*/
 /*	kb-page-prev: "Page_Up";*/
 /*	kb-page-next: "Page_Down";*/

@@ -2,15 +2,16 @@
 	"always_show_minimap_viewport": true,
 	"auto_complete": false,
 	"auto_complete_commit_on_tab": true,
-	"caret_style": "blink",
+	"caret_style": "solid",
 	"color_scheme": "Packages/Theme - Spaceblack/Color Schemes/Spaceblack-Monokai-Black.tmTheme",
 	"draw_minimap_border": true,
 	"font_face": "Hack Nerd Font",
 	"font_size": 11,
-	"highlight_line": true,
+	"highlight_line": false,
 	"ignored_packages":
 	[
 		"LaTeXTools",
+		"Markdown",
 		"Vintage"
 	],
 	"line_numbers": true,
