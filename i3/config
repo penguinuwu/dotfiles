@@ -30,7 +30,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 floating_modifier $mod
 
 # multiple screens
-#exec --no-startup-id xrandr | grep 'HDMI2 connected' && xrandr --output eDP1 --auto --output HDMI2 --auto --left-of eDP1
+exec --no-startup-id xrandr | grep 'HDMI2 connected' && xrandr --output eDP1 --auto --output HDMI2 --auto --mode 1920x1080 --above eDP1 || xrandr --auto
 
 # start a terminal
 #bindsym $mod+d exec i3-sensible-terminal

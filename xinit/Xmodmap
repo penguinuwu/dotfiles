@@ -253,10 +253,6 @@ add shift = Shift_L Shift_R
 clear lock
 add lock = Caps_Lock
 
-clear control
-add control = Control_L
-!add control = Control_L Control_R
-
 clear mod1
 add mod1 = Alt_L Alt_R Meta_L
 
@@ -265,9 +261,13 @@ add mod2 = Num_Lock
 
 clear mod3
 
+clear control
+!add control = Control_L
+add control = Control_L Control_R
+
 clear mod4
-add mod4 = Super_L Super_R Super_L Hyper_L Control_R
-!add mod4 = Super_L Super_R Super_L Hyper_L
+!add mod4 = Super_L Super_R Super_L Hyper_L Control_R
+add mod4 = Super_L Super_R Super_L Hyper_L
 
 clear mod5
 add mod5 = ISO_Level3_Shift Mode_switch
