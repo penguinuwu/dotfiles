@@ -1,6 +1,8 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+exec $HOME/scripts/env-home
+
 set $mod Mod4
 
 font pango:Hack Nerd Font 11
