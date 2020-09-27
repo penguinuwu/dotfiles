@@ -1,8 +1,6 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec $HOME/scripts/env-home
-
 set $mod Mod4
 
 font pango:Hack Nerd Font 11
@@ -32,7 +30,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 floating_modifier $mod
 
 # multiple screens
-exec --no-startup-id xrandr | grep 'HDMI2 connected' && xrandr --output eDP1 --auto --output HDMI2 --auto --mode 1920x1080 --above eDP1 || xrandr --auto
+#exec --no-startup-id xrandr | grep 'HDMI2 connected' && xrandr --output eDP1 --auto --output HDMI2 --auto --mode 1920x1080 --above eDP1 || xrandr --auto
 
 # start a terminal
 #bindsym $mod+d exec i3-sensible-terminal
@@ -274,6 +272,11 @@ for_window [class="Nautilus"] floating enable
 
 # bg
 exec_always --no-startup-id $HOME/.config/fehbg
+
+# set xinput things
+# wtf this bug
+# https://github.com/i3/i3/issues/3877#issuecomment-605213746
+exec_always --no-startup-id sleep 1; $HOME/scripts/xset-home
 
 # bar
 bar {
