@@ -1,4 +1,5 @@
 #!/bin/sh
+$HOME/scripts/env-home
 
 exec i3
 #exec openbox-session
