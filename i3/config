@@ -8,6 +8,8 @@ font pango:Hack Nerd Font 11
 # power control
 set $ptd $HOME/scripts/power-thing-menu
 set $pt $HOME/scripts/power-thing
+set $dark #B8BFC7
+set $highlight #FFD1DC
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -77,7 +79,7 @@ set_from_resource	$color14	color14
 set_from_resource	$color15	color15
 
 # <colorclass>			<border>	<backgrnd>	<text>		<indicator>	<child_border>
-client.focused			$foreground	$background	$foreground	$foreground	$foreground
+client.focused			$foreground	$background	$foreground	$highlight	$highlight
 client.focused_inactive	$foreground	$background	$foreground	$color0		$color0
 client.unfocused		$foreground	$background	$foreground	$color0		$color0
 client.urgent			$foreground	$background	$foreground	$color1		$color1
@@ -285,21 +287,22 @@ bar {
 	workspace_min_width 40
 	#strip_workspace_numbers yes
 	tray_output none
-	separator_symbol "|"
+	# separator removed in i3blocks config
+	#separator_symbol "|"
 	status_command i3blocks
 
 	font pango:Hack Nerd Font 11.5
 	colors {
-		background $background
-		statusline $foreground
-		separator $foreground
+		background $highlight
+		statusline $highlight
+		separator $highlight
 
 		# <colorclass>		<border>	<backgrnd>	<text>
-		focused_workspace	$foreground	$background	$foreground
-		active_workspace	$foreground	$background	$foreground
-		inactive_workspace	$background	$background	$foreground
-		urgent_workspace	$color1		$background	$foreground
-		binding_mode		$background	$background	$foreground
+		focused_workspace	$background	$background	$foreground
+		active_workspace	$background	$background	$foreground
+		inactive_workspace	$dark		$dark		$background
+		urgent_workspace	$foreground	$foreground	$background
+		binding_mode		$dark		$dark		$background
 	}
 }
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
