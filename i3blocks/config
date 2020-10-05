@@ -7,59 +7,77 @@
 
 
 # Global properties
-#border=#000000
-#border_top=0
-#border_left=1
-#border_right=1
-#border_bottom=0
+border=#000000
+border_top=0
+border_left=0
+border_right=0
+border_bottom=0
+separator=false
+separator_block_width=0
 
 [time]
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
 min_width=665
+color=#000000
+background=#FFD1DC
 
 [network]
 align=center
 command=$HOME/scripts/network-info
 interval=5
-min_width=120
+min_width=140
+color=#000000
+background=#ACE8DC
 
 [scratchpad]
 align=center
 command=$HOME/scripts/scratchpad-info
 interval=once
 signal=3
-min_width=50
+min_width=70
+color=#000000
+background=#F6D2AE
 
 [brightness]
 align=center
 command=$HOME/scripts/backlight-info
 interval=once
 signal=1
-min_width=60
+min_width=80
+color=#000000
+background=#FAEBA6
 
 [audio]
 align=center
 command=$HOME/scripts/audio-info
 interval=once
 signal=2
-min_width=60
+min_width=80
+color=#000000
+background=#B5EECD
 
 [temp]
 align=center
 command=$HOME/scripts/temperature-info
 interval=5
-min_width=50
+min_width=70
+color=#000000
+background=#ACE8DC
 
 [battery]
 align=center
 command=$HOME/scripts/battery-info
 interval=5
-min_width=150
+min_width=160
+color=#000000
+background=#B7DBF3
 
 [power]
 align=center
-full_text=" "
+full_text="  "
 command=([[ $button -eq 3 ]] && i3-msg -q exec env-home) || ([[ $button -gt 0 ]] && i3-msg -q exec power-thing-menu)
 interval=once
+color=#000000
+background=#DDC5E7
