@@ -93,11 +93,11 @@ configuration {
 /*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
-	kb-row-up: "Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
-	kb-row-down: "Down,Control+n,Super+Tab";
+	kb-row-up: "Up,KP_Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
+	kb-row-down: "Down,KP_Down,Control+n,Super+Tab";
 /*	kb-row-tab: "Tab";*/
-/*	kb-page-prev: "Page_Up";*/
-/*	kb-page-next: "Page_Down";*/
+	kb-page-prev: "Page_Up,KP_Prior,KP_Left";
+	kb-page-next: "Page_Down,KP_Next,KP_Right";
 /*	kb-row-first: "Home,KP_Home";*/
 /*	kb-row-last: "End,KP_End";*/
 /*	kb-row-select: "Control+space";*/

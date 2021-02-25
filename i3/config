@@ -8,6 +8,7 @@ font pango:Hack Nerd Font 11
 # power control
 set $ptd $HOME/scripts/power-thing-menu
 set $pt $HOME/scripts/power-thing
+set $light #F9FBFA
 set $dark #B8BFC7
 set $highlight #FFD1DC
 
@@ -269,9 +270,6 @@ bindsym $mod+p exec --no-startup-id $pt lock
 # float nautilus
 for_window [class="Nautilus"] floating enable
 
-# compton no
-#exec --no-startup-id picom
-
 # bg
 exec_always --no-startup-id $HOME/.config/fehbg
 
@@ -298,11 +296,15 @@ bar {
 		separator $highlight
 
 		# <colorclass>		<border>	<backgrnd>	<text>
-		focused_workspace	$background	$background	$foreground
-		active_workspace	$background	$background	$foreground
-		inactive_workspace	$dark		$dark		$background
-		urgent_workspace	$foreground	$foreground	$background
-		binding_mode		$dark		$dark		$background
+		focused_workspace	$highlight	$background	$foreground
+		active_workspace	$highlight	$background	$foreground
+		inactive_workspace	$highlight	$highlight	$background
+		urgent_workspace	$highlight	$color1		$background
+		binding_mode		$highlight	$highlight	$background
 	}
 }
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# compton no
+exec_always --no-startup-id picom --config $XDG_CONFIG_HOME/picom.conf
+
