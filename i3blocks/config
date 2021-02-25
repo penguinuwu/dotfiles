@@ -29,7 +29,7 @@ command=$HOME/scripts/network-info
 interval=5
 min_width=140
 color=#000000
-background=#ACE8DC
+background=#F8C1BA
 
 [scratchpad]
 align=center
