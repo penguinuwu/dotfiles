@@ -19,7 +19,7 @@ separator_block_width=0
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
-min_width=665
+min_width=540
 color=#000000
 background=#FFD1DC
 
@@ -66,18 +66,28 @@ min_width=70
 color=#000000
 background=#ACE8DC
 
+[memory]
+align=center
+command=free -h | grep 'Mem:' | awk '{printf "%.1fG\n",  $3}'
+interval=5
+min_width=70
+color=#000000
+background=#B7DBF3
+
 [battery]
 align=center
 command=$HOME/scripts/battery-info
 interval=5
 min_width=160
 color=#000000
-background=#B7DBF3
+background=#DDC5E7
 
 [power]
 align=center
-full_text="  "
+full_text=" "
 command=([[ $button -eq 3 ]] && i3-msg -q exec env-home) || ([[ $button -gt 0 ]] && i3-msg -q exec power-thing-menu)
 interval=once
 color=#000000
 background=#DDC5E7
+#background=#FFFFFC
+

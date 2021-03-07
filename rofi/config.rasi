@@ -89,15 +89,15 @@ configuration {
 /*	kb-accept-custom: "Control+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
-/*	kb-mode-next: "Shift+Right,Control+Tab";*/
-/*	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";*/
+	kb-mode-next: "KP_Right,Shift+Right,Control+Tab";
+	kb-mode-previous: "KP_Left,Shift+Left,Control+ISO_Left_Tab";
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
 	kb-row-up: "Up,KP_Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
 	kb-row-down: "Down,KP_Down,Control+n,Super+Tab";
 /*	kb-row-tab: "Tab";*/
-	kb-page-prev: "Page_Up,KP_Prior,KP_Left";
-	kb-page-next: "Page_Down,KP_Next,KP_Right";
+	kb-page-prev: "Page_Up,KP_Prior";
+	kb-page-next: "Page_Down,KP_Next";
 /*	kb-row-first: "Home,KP_Home";*/
 /*	kb-row-last: "End,KP_End";*/
 /*	kb-row-select: "Control+space";*/
