@@ -68,7 +68,7 @@ background=#ACE8DC
 
 [memory]
 align=center
-command=free -h | grep 'Mem:' | awk '{printf "%.1fG\n",  $3}'
+command=free -m | awk 'NR==2{printf "%.1fG\n", $3/1024}'
 interval=5
 min_width=70
 color=#000000
