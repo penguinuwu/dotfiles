@@ -1,0 +1,146 @@
+{
+	"C_Cpp.updateChannel": "Insiders",
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[java]": {
+		"editor.defaultFormatter": "redhat.java"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.fontFamily": "Hack Nerd Font",
+	"editor.fontSize": 14,
+	"editor.insertSpaces": false,
+	"editor.lineNumbers": "on",
+	"editor.minimap.enabled": false,
+	"editor.snippetSuggestions": "top",
+	"editor.suggestSelection": "first",
+	"editor.tabCompletion": "on",
+	"editor.tabSize": 4,
+	"explorer.confirmDragAndDrop": false,
+	"extensions.autoUpdate": "onlyEnabledExtensions",
+	"files.exclude": {
+		"**/.DS_Store": false,
+		"**/.git": false,
+		"**/.hg": false,
+		"**/.svn": false,
+		"**/CVS": false,
+		"**/.classpath": false,
+		"**/.project": false,
+		"**/.settings": false,
+		"**/.factorypath": false
+	},
+	"gitlens.codeLens.enabled": false,
+	"gitlens.currentLine.enabled": false,
+	"gitlens.defaultDateFormat": "YYYY/MM/DD, h:mmA",
+	"gitlens.defaultDateShortFormat": "YYYY/MM/DD",
+	"gitlens.defaultDateStyle": "absolute",
+	"gitlens.defaultTimeFormat": "h:mmA",
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.hovers.enabled": false,
+	"html.format.contentUnformatted": "pre,code,textarea",
+	"html.format.endWithNewline": true,
+	"html.format.extraLiners": "head, body, /html",
+	"html.format.indentHandlebars": false,
+	"html.format.indentInnerHtml": false,
+	"html.format.maxPreserveNewLines": null,
+	"html.format.preserveNewLines": false,
+	"html.format.wrapAttributes": "auto",
+	"html.format.wrapLineLength": 80,
+	"intelephense.format.braces": "k&r",
+	"java.configuration.runtimes": [
+		{
+			"name": "JavaSE-1.8",
+			"path": "/usr/lib/jvm/java-8-openjdk/",
+			"default": false
+		},
+		{
+			"name": "JavaSE-11",
+			"path": "/usr/lib/jvm/java-11-openjdk/",
+			"default": true
+		},
+		{
+			"name": "JavaSE-15",
+			"path": "/usr/lib/jvm/java-15-openjdk/",
+			"default": false
+		}
+	],
+	"java.home": "/usr/lib/jvm/java-11-openjdk/",
+	"java.project.importOnFirstTimeStartup": "automatic",
+	"java.refactor.renameFromFileExplorer": "autoApply",
+	"latex-workshop.bibtex-format.tab": "tab",
+	"latex-workshop.bind.altKeymap.enabled": true,
+	"latex-workshop.latex.recipes": [
+		{
+			"name": "pog",
+			"tools": [
+				"pdf"
+			]
+		}
+	],
+	"latex-workshop.latex.tools": [
+		{
+			"name": "pdf",
+			"command": "pdf",
+			"args": [
+				"%DOC%"
+			],
+			"env": {}
+		}
+	],
+	"latex-workshop.view.pdf.viewer": "tab",
+	"liveshare.allowGuestDebugControl": true,
+	"liveshare.allowGuestTaskControl": true,
+	"liveshare.allowInvites": "all",
+	"liveshare.anonymousGuestApproval": "accept",
+	"liveshare.authenticationProvider": "GitHub",
+	"liveshare.diagnosticLogging": true,
+	"liveshare.diagnosticMode": true,
+	"liveshare.openSharedServers": false,
+	"liveshare.populateGitCoAuthors": "never",
+	"liveshare.sharedTerminalHeight": 100,
+	"liveshare.sharedTerminalWidth": 200,
+	"liveshare.showReadOnlyUsersInEditor": "always",
+	"prettier.enableDebugLogs": true,
+	"prettier.printWidth": 79,
+	"prettier.trailingComma": "none",
+	"python.languageServer": "Microsoft",
+	"redhat.telemetry.enabled": false,
+	"telemetry.enableCrashReporter": false,
+	"telemetry.enableTelemetry": false,
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"window.customMenuBarAltFocus": false,
+	"window.titleBarStyle": "custom",
+	"window.zoomLevel": 1,
+	"workbench.colorTheme": "Community Material Theme High Contrast",
+	"workbench.editor.untitled.hint": "hidden",
+	"workbench.editorAssociations": [
+		{
+			"viewType": "jupyter.notebook.ipynb",
+			"filenamePattern": "*.ipynb"
+		}
+	],
+	"workbench.enableExperiments": false,
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.settings.enableNaturalLanguageSearch": false
+}
