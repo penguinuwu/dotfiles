@@ -3,8 +3,8 @@
 !/.gitignore
 #!/code/user-data/User/*.json
 !/fehbg
-!/gtk-2.0/
-!/gtk-3.0/
+!/gtk-2.0/gtkrc
+!/gtk-3.0/settings.ini
 !/i3/
 !/i3blocks/
 /i3blocks/network
