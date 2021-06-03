@@ -1,0 +1,12 @@
+{
+	"connect_on_startup": false,
+	"log_level": "ERROR",
+
+	"details": "pog",
+	"state": "",
+	"start_state": "",
+
+	"send_start_timestamp": true,
+	"small_icon": false,
+	"project_name": [],
+}

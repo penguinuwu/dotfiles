@@ -1,0 +1,34 @@
+{
+	"256color": true,
+	"natural_keyboard": false,
+	"theme": "user",
+	"unix_lang": "en_CA.UTF-8",
+	"unix_term": "xterm-256color",
+	"view_settings": {
+		"block_caret": true
+	},
+	"user_theme_colors": {
+		"background": "#1E272C",
+		"foreground": "#CCCCCC",
+		"caret": "#ffcb6b",
+		"block_caret": "#ffcb6b",
+		"selection": "#444444",
+		"selection_foreground": "#ffffff",
+		"00": "#000000",  // black
+		"01": "#ff5370",  // red
+		"02": "#c3e88d",  // green
+		"03": "#ffcb6b",  // yellow
+		"04": "#82aaff",  // blue
+		"05": "#c792ea",  // magenta
+		"06": "#89ddff",  // cyan
+		"07": "#ffffff",  // white
+		"08": "#546e7a",  // light_black
+		"09": "#ff5370",  // light_red
+		"10": "#c3e88d",  // light_green
+		"11": "#ffcb6b",  // light_yellow
+		"12": "#82aaff",  // light_blue
+		"13": "#c792ea",  // light_magenta
+		"14": "#89ddff",  // light_cyan
+		"15": "#ffffff"   // light_white
+	}
+}
