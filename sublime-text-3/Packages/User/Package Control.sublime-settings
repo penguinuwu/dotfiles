@@ -1,0 +1,37 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Babel",
+		"Color Highlight",
+		"ColorSchemeEditor",
+		"Discord Rich Presence",
+		"FileManager",
+		"Git blame",
+		"HTML (C#)",
+		"HTML5",
+		"LaTeXTools",
+		"MarkdownEditing",
+		"Material Theme",
+		"MoveTab",
+		"OLED Color Scheme",
+		"Package Control",
+		"PackageDev",
+		"Racket",
+		"ReadmePlease",
+		"RemoteSubl",
+		"Snake",
+		"SublimeCodeIntel",
+		"SublimeHaskell",
+		"Terminus",
+		"Theme - Brogrammer",
+		"Theme - Darkmatter",
+		"Theme - Spaceblack",
+		"Vue Syntax Highlight",
+		"WordCount"
+	],
+}

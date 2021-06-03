@@ -1,0 +1,4 @@
+{
+	"cmd": ["/home/uwu/scripts/pdf", "$file"],
+	"file_patterns": ["*.tex"]
+}
