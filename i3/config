@@ -263,7 +263,7 @@ bindsym $mod+Control+Shift+KP_Right resize grow width 10 px or 10 ppt
 # power control
 bindsym $mod+Escape exec --no-startup-id $ptd
 bindsym XF86PowerOff exec --no-startup-id $ptd
-bindsym $mod+p exec --no-startup-id $pt lock
+bindsym $mod+p exec --no-startup-id $pt suspend
 #bindsym $mod+XF86PowerOff exec --no-startup-id $pt suspend
 #bindsym $mod+Shift+XF86PowerOff exec --no-startup-id $pt hibernate
 
