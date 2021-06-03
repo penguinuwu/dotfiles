@@ -208,4 +208,8 @@
 		"key": "ctrl+shift+q",
 		"command": "workbench.action.closeEditorsInGroup"
 	},
+	{
+		"key": "ctrl+capslock",
+		"command": "workbench.action.toggleMaximizedPanel"
+	},
 ]

@@ -126,6 +126,10 @@
 	"prettier.trailingComma": "none",
 	"python.languageServer": "Microsoft",
 	"redhat.telemetry.enabled": false,
+	"search.exclude": {
+		"**/.git": true,
+		"**/.svn": true
+	},
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
