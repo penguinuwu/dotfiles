@@ -1,22 +1,50 @@
+# https://stackoverflow.com/a/9227991/9069307
+# https://stackoverflow.com/a/29932318/9069307
 /*
+
 !/README.md
 !/.gitignore
-#!/code/user-data/User/*.json
 !/fehbg
-!/gtk-2.0/gtkrc
-!/gtk-3.0/settings.ini
 !/i3/
-!/i3blocks/
-/i3blocks/network
 !/kitty/
 !/linopen/
-!/rofi
-#!/sublime-text-3/
-#/sublime-text-3/*
-#!/sublime-text-3/Installed\ Packages/
-#!/sublime-text-3/Packages/
-#/sublime-text-3/Packages/*
-#!/sublime-text-3/Packages/User/
-#/sublime-text-3/Packages/User/*.cache/
+!/rofi/
 !/X11/
 !/xinit/
+
+!/gtk-2.0/
+/gtk-2.0/*
+!/gtk-2.0/gtkrc
+
+!/gtk-3.0/
+/gtk-3.0/*
+!/gtk-3.0/settings.ini
+
+!/i3blocks/
+/i3blocks/*
+!/i3blocks/config
+
+!/sublime-text-3/
+/sublime-text-3/*
+!/sublime-text-3/Packages/
+/sublime-text-3/Packages/*
+!/sublime-text-3/Packages/User/
+/sublime-text-3/Packages/User/*
+!/sublime-text-3/Packages/User/Color\ Highlight.sublime-settings
+!/sublime-text-3/Packages/User/Default\ (Linux).sublime-keymap
+!/sublime-text-3/Packages/User/Default\ (Linux).sublime-mousemap
+!/sublime-text-3/Packages/User/DiscordRichPresence.sublime-settings
+!/sublime-text-3/Packages/User/Package\ Control.sublime-settings
+!/sublime-text-3/Packages/User/pdflatex.sublime-build
+!/sublime-text-3/Packages/User/Preferences.sublime-settings
+!/sublime-text-3/Packages/User/Terminus.sublime-settings
+!/sublime-text-3/Packages/User/WordCount.sublime-settings
+
+!/code/
+/code/*
+!/code/user-data/
+/code/user-data/*
+!/code/user-data/User/
+/code/user-data/User/*
+!/code/user-data/User/keybindings.json
+!/code/user-data/User/settings.json
