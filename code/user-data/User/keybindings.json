@@ -1,6 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-	// disable latex extension keys
+	// #region disable latex extension keys
 	{
 		"key": "ctrl+l alt+b",
 		"command": "-latex-workshop.build",
@@ -116,9 +116,9 @@
 		"command": "-expandLineSelection",
 		"when": "textInputFocus && editorLangId =~ /latex|rsweave|jlweave/"
 	},
-	////////////////////////////////////////////////////////////////////////////////
+	// #endregion
 
-	// ctrl+tab cycle forward tabs and terminals
+	// #region ctrl+tab cycle forward tabs and terminals
 	{
 		"key": "ctrl+pagedown",
 		"command": "-workbench.action.nextEditor"
@@ -145,8 +145,9 @@
 		"command": "workbench.action.terminal.focusNext",
 		"when": "terminalFocus && terminalProcessSupported"
 	},
+	// #endregion
 
-	// ctrl+tab cycle backward tabs and terminals
+	// #region ctrl+tab cycle backward tabs and terminals
 	{
 		"key": "ctrl+pageup",
 		"command": "-workbench.action.previousEditor"
@@ -173,8 +174,9 @@
 		"command": "workbench.action.terminal.focusPrevious",
 		"when": "terminalFocus && terminalProcessSupported"
 	},
+	// #endregion
 
-	// ctrl+w backspace
+	// #region ctrl+w backspace
 	{
 		"key": "ctrl+w",
 		"command": "-workbench.action.closeActiveEditor"
@@ -194,8 +196,9 @@
 		"command": "deleteWordLeft",
 		"when": "textInputFocus && !editorReadonly"
 	},
+	// #endregion
 
-	// close tabs
+	// #region close tabs
 	{
 		"key": "ctrl+q",
 		"command": "-workbench.action.quit"
@@ -212,4 +215,13 @@
 		"key": "ctrl+capslock",
 		"command": "workbench.action.toggleMaximizedPanel"
 	},
+	// #endregion
+
+	// #region make ctrl+shift+v paste
+	{
+		"key": "ctrl+shift+v",
+		"command": "-markdown.showPreview",
+		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
+	},
+	// #endregion
 ]

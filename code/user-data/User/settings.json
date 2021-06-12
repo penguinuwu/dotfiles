@@ -1,5 +1,7 @@
 {
 	"C_Cpp.updateChannel": "Insiders",
+
+	// #region editor config
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
@@ -37,6 +39,8 @@
 	"editor.suggestSelection": "first",
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 4,
+	// #endregion
+
 	"explorer.confirmDragAndDrop": false,
 	"extensions.autoUpdate": "onlyEnabledExtensions",
 	"files.exclude": {
@@ -50,6 +54,8 @@
 		"**/.settings": false,
 		"**/.factorypath": false
 	},
+
+	// #region gitlens
 	"gitlens.codeLens.enabled": false,
 	"gitlens.currentLine.enabled": false,
 	"gitlens.defaultDateFormat": "YYYY/MM/DD, h:mmA",
@@ -58,6 +64,9 @@
 	"gitlens.defaultTimeFormat": "h:mmA",
 	"gitlens.hovers.currentLine.over": "line",
 	"gitlens.hovers.enabled": false,
+	// #endregion
+
+	// #region html format
 	"html.format.contentUnformatted": "pre,code,textarea",
 	"html.format.endWithNewline": true,
 	"html.format.extraLiners": "head, body, /html",
@@ -67,7 +76,11 @@
 	"html.format.preserveNewLines": false,
 	"html.format.wrapAttributes": "auto",
 	"html.format.wrapLineLength": 80,
+	// #endregion
+
 	"intelephense.format.braces": "k&r",
+
+	// #region java
 	"java.configuration.runtimes": [
 		{
 			"name": "JavaSE-1.8",
@@ -88,6 +101,9 @@
 	"java.home": "/usr/lib/jvm/java-11-openjdk/",
 	"java.project.importOnFirstTimeStartup": "automatic",
 	"java.refactor.renameFromFileExplorer": "autoApply",
+	// #endregion
+
+	// #region latex
 	"latex-workshop.bibtex-format.tab": "tab",
 	"latex-workshop.bind.altKeymap.enabled": true,
 	"latex-workshop.latex.recipes": [
@@ -109,6 +125,9 @@
 		}
 	],
 	"latex-workshop.view.pdf.viewer": "tab",
+	// #endregion
+
+	// #region liveshare config
 	"liveshare.allowGuestDebugControl": true,
 	"liveshare.allowGuestTaskControl": true,
 	"liveshare.allowInvites": "all",
@@ -121,9 +140,14 @@
 	"liveshare.sharedTerminalHeight": 100,
 	"liveshare.sharedTerminalWidth": 200,
 	"liveshare.showReadOnlyUsersInEditor": "always",
+	// #endregion
+
+	// #region prettier config
 	"prettier.enableDebugLogs": true,
 	"prettier.printWidth": 79,
 	"prettier.trailingComma": "none",
+	// #endregion
+
 	"python.languageServer": "Microsoft",
 	"redhat.telemetry.enabled": false,
 	"search.exclude": {
@@ -138,12 +162,9 @@
 	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Community Material Theme High Contrast",
 	"workbench.editor.untitled.hint": "hidden",
-	"workbench.editorAssociations": [
-		{
-			"viewType": "jupyter.notebook.ipynb",
-			"filenamePattern": "*.ipynb"
-		}
-	],
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb"
+	},
 	"workbench.enableExperiments": false,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.settings.enableNaturalLanguageSearch": false
