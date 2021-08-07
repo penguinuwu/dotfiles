@@ -40,6 +40,13 @@
 !/sublime-text-3/Packages/User/Terminus.sublime-settings
 !/sublime-text-3/Packages/User/WordCount.sublime-settings
 
+!/sublime-text/
+/sublime-text/*
+!/sublime-text/Packages/
+/sublime-text/Packages/*
+!/sublime-text/Packages/User/
+/sublime-text/Packages/User/*
+
 !/code/
 /code/*
 !/code/user-data/
