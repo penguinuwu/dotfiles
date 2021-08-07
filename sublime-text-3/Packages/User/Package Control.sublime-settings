@@ -6,9 +6,7 @@
 	"installed_packages":
 	[
 		"A File Icon",
-		"Babel",
 		"Color Highlight",
-		"ColorSchemeEditor",
 		"Discord Rich Presence",
 		"FileManager",
 		"Git blame",
@@ -17,6 +15,7 @@
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Material Theme",
+		"Meetio Theme",
 		"MoveTab",
 		"OLED Color Scheme",
 		"Package Control",
@@ -30,8 +29,7 @@
 		"Terminus",
 		"Theme - Brogrammer",
 		"Theme - Darkmatter",
-		"Theme - Spaceblack",
 		"Vue Syntax Highlight",
-		"WordCount"
+		"WordCount",
 	],
 }
