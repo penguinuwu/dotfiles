@@ -1,6 +1,14 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-	// #region disable latex extension keys
+	// #region notebook ctrl+l conflict
+	{
+		"key": "ctrl+l",
+		"command": "-notebook.centerActiveCell",
+		"when": "notebookEditorFocused"
+	},
+	// #endregion
+
+	// #region latex ctrl+l conflict
 	{
 		"key": "ctrl+l alt+b",
 		"command": "-latex-workshop.build",

@@ -149,6 +149,7 @@
 	// #endregion
 
 	"python.languageServer": "Microsoft",
+	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"redhat.telemetry.enabled": false,
 	"search.exclude": {
 		"**/.git": true,
@@ -156,9 +157,12 @@
 	},
 	"telemetry.enableCrashReporter": false,
 	"telemetry.enableTelemetry": false,
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+	// #region window
 	"window.customMenuBarAltFocus": false,
+	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
 	"window.titleBarStyle": "custom",
+	"window.titleSeparator": " 🐱 ",
 	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Community Material Theme High Contrast",
 	"workbench.editor.untitled.hint": "hidden",
@@ -167,5 +171,8 @@
 	},
 	"workbench.enableExperiments": false,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.settings.enableNaturalLanguageSearch": false
+	"workbench.settings.enableNaturalLanguageSearch": false,
+	// #endregion
+
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
