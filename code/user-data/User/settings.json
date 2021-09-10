@@ -170,6 +170,4 @@
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	// #endregion
-
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
