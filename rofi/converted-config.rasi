@@ -1,0 +1,209 @@
+configuration {
+	modi: "drun,window,ssh,run";
+	font: "Hack Regular 12";
+	fixed-num-lines: true;
+	show-icons: false;
+	disable-history: true;
+	sidebar-mode: true;
+	color-normal: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-urgent: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-active: "#000000, #FFFFFF, #000000, #D9D9D9, #000000";
+	color-window: "#000000, #FFFFFF, #D9D9D9";
+	max-history-size: 0;
+	kb-mode-next: "KP_Right,Shift+Right,Control+Tab";
+	kb-mode-previous: "KP_Left,Shift+Left,Control+ISO_Left_Tab";
+	kb-row-up: "Up,KP_Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
+	kb-row-down: "Down,KP_Down,Control+n,Super+Tab";
+	kb-page-prev: "Page_Up,KP_Prior";
+	kb-page-next: "Page_Down,KP_Next";
+}
+
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.6.1
+ **/
+* {
+    alternate-urgent-background: rgba ( 0, 0, 0, 100 % );
+    selected-active-background:  rgba ( 217, 217, 217, 100 % );
+    nord5:                       rgba ( 229, 233, 240, 100 % );
+    selected-urgent-background:  rgba ( 217, 217, 217, 100 % );
+    selected-urgent-foreground:  rgba ( 0, 0, 0, 100 % );
+    nord14:                      rgba ( 163, 190, 140, 100 % );
+    alternate-active-foreground: var(active-foreground);
+    nord0:                       rgba ( 46, 52, 64, 100 % );
+    alternate-urgent-foreground: var(urgent-foreground);
+    nord6:                       rgba ( 236, 239, 244, 100 % );
+    nord15:                      rgba ( 180, 142, 173, 100 % );
+    normal-foreground:           var(foreground);
+    nord1:                       rgba ( 59, 66, 82, 100 % );
+    background:                  rgba ( 0, 0, 0, 100 % );
+    nord10:                      rgba ( 94, 129, 172, 100 % );
+    nord7:                       rgba ( 143, 188, 187, 100 % );
+    alternate-normal-foreground: var(foreground);
+    urgent-foreground:           rgba ( 255, 255, 255, 100 % );
+    active-background:           rgba ( 0, 0, 0, 100 % );
+    selected-normal-background:  rgba ( 217, 217, 217, 100 % );
+    nord2:                       rgba ( 67, 76, 94, 100 % );
+    alternate-active-background: rgba ( 0, 0, 0, 100 % );
+    selected-active-foreground:  rgba ( 0, 0, 0, 100 % );
+    blue:                        rgba ( 38, 139, 210, 100 % );
+    separatorcolor:              rgba ( 217, 217, 217, 100 % );
+    nord8:                       rgba ( 136, 192, 208, 100 % );
+    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    nord11:                      rgba ( 191, 97, 106, 100 % );
+    spacing:                     2;
+    nord3:                       rgba ( 76, 86, 106, 100 % );
+    nord12:                      rgba ( 208, 135, 112, 100 % );
+    nord9:                       rgba ( 129, 161, 193, 100 % );
+    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    red:                         rgba ( 220, 50, 47, 100 % );
+    background-color:            rgba ( 0, 0, 0, 0 % );
+    normal-background:           rgba ( 0, 0, 0, 100 % );
+    border-color:                rgba ( 255, 255, 255, 100 % );
+    white:                       rgba ( 255, 255, 255, 100 % );
+    foreground:                  rgba ( 255, 255, 255, 100 % );
+    nord4:                       rgba ( 216, 222, 233, 100 % );
+    nord13:                      rgba ( 235, 203, 139, 100 % );
+    urgent-background:           rgba ( 0, 0, 0, 100 % );
+    selected-normal-foreground:  rgba ( 0, 0, 0, 100 % );
+    black:                       rgba ( 0, 0, 0, 100 % );
+    active-foreground:           rgba ( 255, 255, 255, 100 % );
+    alternate-normal-background: rgba ( 0, 0, 0, 100 % );
+}
+element {
+    padding: 1px ;
+    spacing: 5px ;
+    border:  0;
+}
+element normal.normal {
+    background-color: var(normal-background);
+    text-color:       var(normal-foreground);
+}
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color:       var(urgent-foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color:       var(active-foreground);
+}
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color: var(selected-urgent-background);
+    text-color:       var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color: var(selected-active-background);
+    text-color:       var(selected-active-foreground);
+}
+element alternate.normal {
+    background-color: var(alternate-normal-background);
+    text-color:       var(alternate-normal-foreground);
+}
+element alternate.urgent {
+    background-color: var(alternate-urgent-background);
+    text-color:       var(alternate-urgent-foreground);
+}
+element alternate.active {
+    background-color: var(alternate-active-background);
+    text-color:       var(alternate-active-foreground);
+}
+element-text {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    highlight:        inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    size:             1.0000em ;
+    text-color:       inherit;
+}
+window {
+    padding:          5;
+    background-color: var(background);
+    border:           1;
+}
+mainbox {
+    padding: 0;
+    border:  0;
+}
+message {
+    padding:      1px ;
+    border-color: var(separatorcolor);
+    border:       2px 0px 0px ;
+}
+textbox {
+    text-color: var(foreground);
+}
+listview {
+    padding:      2px 0px 0px ;
+    scrollbar:    false;
+    border-color: var(separatorcolor);
+    spacing:      2px ;
+    fixed-height: 0;
+    border:       2px 0px 0px ;
+}
+scrollbar {
+    width:        4px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: var(normal-foreground);
+}
+sidebar {
+    border-color: var(separatorcolor);
+    border:       2px dash 0px 0px ;
+}
+button {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+num-filtered-rows {
+    expand:     false;
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+num-rows {
+    expand:     false;
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+textbox-num-sep {
+    expand:     false;
+    str:        "/";
+    text-color: rgba ( 128, 128, 128, 100 % );
+}
+inputbar {
+    padding:    1px ;
+    spacing:    0px ;
+    text-color: var(normal-foreground);
+    children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ];
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+entry {
+    text-color:        var(normal-foreground);
+    spacing:           0;
+    placeholder-color: rgba ( 128, 128, 128, 100 % );
+    placeholder:       "Type to filter";
+}
+prompt {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+textbox-prompt-colon {
+    margin:     0px 0.3000em 0.0000em 0.0000em ;
+    expand:     false;
+    str:        ":";
+    text-color: inherit;
+}
+mode-switcher {
+    border: 2px 0px 0px ;
+}
