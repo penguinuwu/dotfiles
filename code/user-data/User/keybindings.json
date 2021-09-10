@@ -120,6 +120,11 @@
 		"when": "config.latex-workshop.bind.altKeymap.enabled"
 	},
 	{
+		"key": "ctrl+l alt+x",
+		"command": "-workbench.view.extension.latex-workshop-activitybar",
+		"when": "config.latex-workshop.bind.altKeymap.enabled"
+	},
+	{
 		"key": "ctrl+l ctrl+l",
 		"command": "-expandLineSelection",
 		"when": "textInputFocus && editorLangId =~ /latex|rsweave|jlweave/"
@@ -212,6 +217,10 @@
 		"command": "-workbench.action.quit"
 	},
 	{
+		"key": "ctrl+k ctrl+down",
+		"command": "-workbench.action.closeActiveEditor"
+	},
+	{
 		"key": "ctrl+q",
 		"command": "workbench.action.closeActiveEditor"
 	},
@@ -230,6 +239,39 @@
 		"key": "ctrl+shift+v",
 		"command": "-markdown.showPreview",
 		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
+	},
+	// #endregion
+
+	// #region split editor
+	{
+		"key": "ctrl+k ctrl+up",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "shift+alt+3",
+		"command": "workbench.action.splitEditorDown"
+	},
+	{
+		"key": "ctrl+alt+up",
+		"command": "editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+up",
+		"command": "-editor.action.copyLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	// #endregion
+	
+	// #region go to definition
+	{
+		"key": "ctrl+,",
+		"command": "-workbench.action.openSettings"
+	},
+	{
+		"key": "ctrl+,",
+		"command": "editor.action.revealDefinition",
+		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 	},
 	// #endregion
 ]

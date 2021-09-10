@@ -30,13 +30,13 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"editor.acceptSuggestionOnEnter": "off",
+	"editor.bracketPairColorization.enabled": true,
 	"editor.fontFamily": "Hack Nerd Font",
 	"editor.fontSize": 14,
 	"editor.insertSpaces": false,
 	"editor.lineNumbers": "on",
 	"editor.minimap.enabled": false,
 	"editor.snippetSuggestions": "top",
-	"editor.suggestSelection": "first",
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 4,
 	// #endregion
@@ -146,9 +146,6 @@
 	"prettier.enableDebugLogs": true,
 	"prettier.printWidth": 79,
 	"prettier.trailingComma": "none",
-	// #endregion
-
-	"python.languageServer": "Microsoft",
 	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"redhat.telemetry.enabled": false,
 	"search.exclude": {
@@ -174,5 +171,5 @@
 	"workbench.settings.enableNaturalLanguageSearch": false,
 	// #endregion
 
-	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
