@@ -20,10 +20,20 @@
 #define	nord15	#B48EAD
 
 *.foreground:	nord4
-*.background:	nord0
+*.background:	black
+!*.background:	nord0
 *.cursorColor:	nord4
 *fading:		35
 *fadeColor:		nord3
+
+! black
+! red
+! green
+! yellow
+! blue
+! magenta
+! cyan
+! white
 
 *.color0:	nord1
 *.color1:	nord11
@@ -33,13 +43,14 @@
 *.color5:	nord15
 *.color6:	nord8
 *.color7:	nord5
+
 *.color8:	nord3
 *.color9:	nord11
 *.color10:	nord14
 *.color11:	nord13
 *.color12:	nord9
 *.color13:	nord15
-*.color14:	nord7
+*.color14:	nord8
 *.color15:	nord6
 
 ! cursor
