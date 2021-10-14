@@ -39,10 +39,7 @@
 	"editor.snippetSuggestions": "top",
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 4,
-	// #endregion
-
 	"explorer.confirmDragAndDrop": false,
-	"extensions.autoUpdate": "onlyEnabledExtensions",
 	"files.exclude": {
 		"**/.DS_Store": false,
 		"**/.git": false,
@@ -54,6 +51,15 @@
 		"**/.settings": false,
 		"**/.factorypath": false
 	},
+	"search.exclude": {
+		"**/.git": true,
+		"**/.svn": true
+	},
+	"workbench.editorAssociations": {
+		"*.ipynb": "jupyter.notebook.ipynb",
+		"*.pdf": "pdf.preview"
+	},
+	// #endregion
 
 	// #region gitlens
 	"gitlens.codeLens.enabled": false,
@@ -77,8 +83,6 @@
 	"html.format.wrapAttributes": "auto",
 	"html.format.wrapLineLength": 80,
 	// #endregion
-
-	"intelephense.format.braces": "k&r",
 
 	// #region java
 	"java.configuration.runtimes": [
@@ -127,6 +131,13 @@
 	"latex-workshop.view.pdf.viewer": "tab",
 	// #endregion
 
+	// #region python
+	// prevent python from crashing when using venv
+	"python.experiments.optInto": [
+		"pythonDiscoveryModuleWithoutWatcher"
+	],
+	// #endregion
+
 	// #region liveshare config
 	"liveshare.allowGuestDebugControl": true,
 	"liveshare.allowGuestTaskControl": true,
@@ -144,16 +155,20 @@
 
 	// #region prettier config
 	"prettier.enableDebugLogs": true,
-	"prettier.printWidth": 79,
+	"prettier.printWidth": 80,
 	"prettier.trailingComma": "none",
-	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"redhat.telemetry.enabled": false,
-	"search.exclude": {
-		"**/.git": true,
-		"**/.svn": true
-	},
-	"telemetry.enableCrashReporter": false,
-	"telemetry.enableTelemetry": false,
+	// #endregion
+
+	// #region telemetry
+	"extensions.autoUpdate": false,
+	"extensions.autoCheckUpdates": false,
+	// "telemetry.enableCrashReporter": false,
+	// "telemetry.enableTelemetry": false,
+	"telemetry.telemetryLevel": "off",
+	"workbench.enableExperiments": false,
+	"workbench.settings.enableNaturalLanguageSearch": false,
+	// #endregion
 
 	// #region window
 	"window.customMenuBarAltFocus": false,
@@ -163,11 +178,7 @@
 	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Community Material Theme High Contrast",
 	"workbench.editor.untitled.hint": "hidden",
-	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter.notebook.ipynb"
-	},
-	"workbench.enableExperiments": false,
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.settings.enableNaturalLanguageSearch": false,
+	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	// #endregion
 }
