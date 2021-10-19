@@ -252,14 +252,24 @@
 		"command": "workbench.action.splitEditorDown"
 	},
 	{
-		"key": "ctrl+alt+up",
-		"command": "editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
+		"key": "ctrl+alt+right",
+		"command": "-cursorWordEndRight",
+		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+shift+alt+up",
-		"command": "-editor.action.copyLinesUpAction",
-		"when": "editorTextFocus && !editorReadonly"
+		"key": "ctrl+shift+alt+right",
+		"command": "-cursorWordEndRightSelect",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+left",
+		"command": "-cursorWordStartLeft",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+left",
+		"command": "-cursorWordStartLeftSelect",
+		"when": "editorTextFocus"
 	},
 	// #endregion
 	
