@@ -55,3 +55,8 @@
 /code/user-data/User/*
 !/code/user-data/User/keybindings.json
 !/code/user-data/User/settings.json
+
+!/vim/
+/vim/*
+!/vim/vimrc
+

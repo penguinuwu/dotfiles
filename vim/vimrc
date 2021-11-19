@@ -1,0 +1,44 @@
+set runtimepath+=$VIMHOME,$VIMHOME/after
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('$VIMHOME/plugged')
+
+" Declare the list of plugins.
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'joshdick/onedark.vim', { 'branch': 'main' }
+" Plug 'arcticicestudio/nord-vim'
+Plug 'tpope/vim-sensible'
+Plug 'mg979/vim-visual-multi'
+Plug 'tpope/vim-fugitive'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+" Plug 'powerline/powerline'
+Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+set viminfo+=n$VIMHOME/viminfo
+" set backupdir=$VIMHOME/backup//
+" set directory=$VIMHOME/swap//
+" set undodir=$VIMHOME/undo//
+set nobackup
+set noswapfile
+set noundofile
+
+syntax enable
+
+set number
+set noexpandtab
+set tabstop=4
+set shiftwidth=4
+
+set termguicolors
+let g:material_theme_style = 'default'
+let g:lightline = { 'colorscheme': 'material_vim' }
+colorscheme material
+
+" https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
