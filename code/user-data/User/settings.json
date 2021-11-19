@@ -59,6 +59,7 @@
 		"*.ipynb": "jupyter.notebook.ipynb",
 		"*.pdf": "pdf.preview"
 	},
+	"vim.foldfix": true,
 	// #endregion
 
 	// #region gitlens
@@ -175,10 +176,10 @@
 	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
 	"window.titleBarStyle": "custom",
 	"window.titleSeparator": " 🐱 ",
-	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Community Material Theme High Contrast",
 	"workbench.editor.untitled.hint": "hidden",
 	"workbench.iconTheme": "material-icon-theme",
 	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
+	"window.zoomLevel": 1,
 	// #endregion
 }
