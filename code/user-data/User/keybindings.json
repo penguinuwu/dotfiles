@@ -1,14 +1,6 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-	// #region notebook ctrl+l conflict
-	{
-		"key": "ctrl+l",
-		"command": "-notebook.centerActiveCell",
-		"when": "notebookEditorFocused"
-	},
-	// #endregion
-
-	// #region latex ctrl+l conflict
+	// #region ctrl+l conflicts
 	{
 		"key": "ctrl+l alt+b",
 		"command": "-latex-workshop.build",
@@ -129,25 +121,17 @@
 		"command": "-expandLineSelection",
 		"when": "textInputFocus && editorLangId =~ /latex|rsweave|jlweave/"
 	},
+	{
+		"key": "ctrl+l",
+		"command": "-notebook.centerActiveCell",
+		"when": "notebookEditorFocused"
+	},
 	// #endregion
 
 	// #region ctrl+tab cycle forward tabs and terminals
 	{
-		"key": "ctrl+pagedown",
-		"command": "-workbench.action.nextEditor"
-	},
-	{
-		"key": "ctrl+pagedown",
-		"command": "-workbench.action.terminal.focusNext",
-		"when": "terminalFocus && terminalProcessSupported"
-	},
-	{
 		"key": "ctrl+tab",
 		"command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-	},
-	{
-		"key": "ctrl+pagedown",
-		"command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
 	},
 	{
 		"key": "ctrl+tab",
@@ -162,21 +146,8 @@
 
 	// #region ctrl+tab cycle backward tabs and terminals
 	{
-		"key": "ctrl+pageup",
-		"command": "-workbench.action.previousEditor"
-	},
-	{
-		"key": "ctrl+pageup",
-		"command": "-workbench.action.terminal.focusPrevious",
-		"when": "terminalFocus && terminalProcessSupported"
-	},
-	{
 		"key": "ctrl+shift+tab",
 		"command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
-	},
-	{
-		"key": "ctrl+pageup",
-		"command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
 	},
 	{
 		"key": "ctrl+shift+tab",
@@ -189,7 +160,7 @@
 	},
 	// #endregion
 
-	// #region ctrl+w backspace
+	// #region ctrl+w and ctrl+e delete word
 	{
 		"key": "ctrl+w",
 		"command": "-workbench.action.closeActiveEditor"
@@ -201,12 +172,16 @@
 	},
 	{
 		"key": "ctrl+w",
-		"command": "-workbench.action.closeWindow",
-		"when": "!editorIsOpen && !multipleEditorGroups"
+		"command": "deleteWordLeft",
+		"when": "textInputFocus && !editorReadonly"
 	},
 	{
-		"key": "ctrl+w",
-		"command": "deleteWordLeft",
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "deleteWordRight",
 		"when": "textInputFocus && !editorReadonly"
 	},
 	// #endregion
@@ -215,10 +190,6 @@
 	{
 		"key": "ctrl+q",
 		"command": "-workbench.action.quit"
-	},
-	{
-		"key": "ctrl+k ctrl+down",
-		"command": "-workbench.action.closeActiveEditor"
 	},
 	{
 		"key": "ctrl+q",
@@ -244,31 +215,31 @@
 
 	// #region split editor
 	{
-		"key": "ctrl+k ctrl+up",
-		"command": "-workbench.action.splitEditor"
+		"key": "shift+alt+2",
+		"command": "workbench.action.splitEditorRight"
 	},
 	{
 		"key": "shift+alt+3",
 		"command": "workbench.action.splitEditorDown"
 	},
 	{
-		"key": "ctrl+alt+right",
-		"command": "-cursorWordEndRight",
+		"key": "alt+up",
+		"command": "workbench.action.focusAboveGroup",
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+shift+alt+right",
-		"command": "-cursorWordEndRightSelect",
+		"key": "alt+down",
+		"command": "workbench.action.focusBelowGroup",
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+alt+left",
-		"command": "-cursorWordStartLeft",
+		"key": "alt+left",
+		"command": "workbench.action.focusLeftGroup",
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+shift+alt+left",
-		"command": "-cursorWordStartLeftSelect",
+		"key": "alt+right",
+		"command": "workbench.action.focusRightGroup",
 		"when": "editorTextFocus"
 	},
 	// #endregion
@@ -283,5 +254,165 @@
 		"command": "editor.action.revealDefinition",
 		"when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
 	},
+	// #endregion
+
+	// #region sublime text keymap
+	{
+		"key": "ctrl+t",
+		"command": "extension.transpose",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.showAllSymbols"
+	},
+
+	// better block comment binding
+	{
+		"key": "ctrl+shift+a",
+		"command": "-editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+/",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	// select all instances
+	{
+		"key": "ctrl+shift+l",
+		"command": "-editor.action.selectHighlights",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+a",
+		"command": "editor.action.selectHighlights",
+		"when": "editorFocus"
+	},
+	
+	// ctrl+shift+l insert cursor at end of line
+	{
+		"key": "ctrl+shift+l",
+		"command": "-selectAllSearchEditorMatches",
+		"when": "inSearchEditor"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "-addCursorsAtSearchResults",
+		"when": "fileMatchOrMatchFocus && searchViewletVisible"
+	},
+	{
+		"key": "shift+alt+i",
+		"command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "editor.action.insertCursorAtEndOfEachLineSelected",
+		"when": "editorTextFocus"
+	},
+
+	// duplicate current line
+	{
+		"key": "ctrl+shift+d",
+		"command": "-workbench.view.debug",
+		"when": "viewContainer.workbench.view.debug.enabled"
+	},
+	{
+		"key": "ctrl+shift+alt+down",
+		"command": "-editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	// move lines
+	{
+		"key": "alt+up",
+		"command": "-editor.action.moveLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"linux": "ctrl+shift+up",
+		"key": "ctrl+shift+up",
+		"command": "editor.action.moveLinesUpAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "alt+down",
+		"command": "-editor.action.moveLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"linux": "ctrl+shift+down",
+		"key": "ctrl+shift+down",
+		"command": "editor.action.moveLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	// delete left right
+	{
+		"key": "ctrl+shift+backspace",
+		"command": "deleteAllLeft"
+	},
+	{
+		"key": "ctrl+shift+delete",
+		"command": "deleteAllRight"
+	},
+
+	// uppercase lowercase
+	{
+		"key": "ctrl+k ctrl+u",
+		"command": "-editor.action.removeCommentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+k ctrl+u",
+		"command": "editor.action.transformToUppercase",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+k ctrl+l",
+		"command": "-editor.toggleFold",
+		"when": "editorTextFocus && foldingEnabled"
+	},
+	{
+		"key": "ctrl+k ctrl+l",
+		"command": "editor.action.transformToLowercase",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+
+	// back and forward
+	{
+		"key": "alt+-",
+		"command": "workbench.action.navigateBack",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+-",
+		"command": "workbench.action.navigateForward",
+		"when": "editorTextFocus"
+	},
+
+	// idk about this one, smart grow
+	// {
+	// 	"key": "ctrl+shift+space",
+	// 	"command": "editor.action.smartSelect.grow",
+	// 	"when": "editorTextFocus"
+	// },
 	// #endregion
 ]
