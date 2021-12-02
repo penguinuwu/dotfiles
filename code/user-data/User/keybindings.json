@@ -243,7 +243,7 @@
 		"when": "editorTextFocus"
 	},
 	// #endregion
-	
+
 	// #region go to definition
 	{
 		"key": "ctrl+,",
@@ -290,7 +290,7 @@
 		"command": "editor.action.selectHighlights",
 		"when": "editorFocus"
 	},
-	
+
 	// ctrl+shift+l insert cursor at end of line
 	{
 		"key": "ctrl+shift+l",
@@ -407,12 +407,108 @@
 		"command": "workbench.action.navigateForward",
 		"when": "editorTextFocus"
 	},
+	// #endregion
 
-	// idk about this one, smart grow
+	// #region hjkl move
 	// {
-	// 	"key": "ctrl+shift+space",
-	// 	"command": "editor.action.smartSelect.grow",
-	// 	"when": "editorTextFocus"
+	// 	"key": "alt+h",
+	// 	"command": "-gitlens.showQuickFileHistory",
+	// 	"when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
 	// },
+	// {
+	// 	"key": "shift+alt+h",
+	// 	"command": "-gitlens.showQuickRepoHistory",
+	// 	"when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+	// },
+	{
+		"key": "alt+h",
+		"command": "cursorLeft",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+h",
+		"command": "cursorLeftSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+h",
+		"command": "cursorColumnSelectLeft",
+		"when": "editorColumnSelection && textInputFocus"
+	},
+	{
+		"key": "ctrl+alt+h",
+		"command": "cursorWordLeft",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+h",
+		"command": "cursorWordLeftSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+j",
+		"command": "cursorDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+j",
+		"command": "cursorDownSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+j",
+		"command": "cursorColumnSelectDown",
+		"when": "editorColumnSelection && textInputFocus"
+	},
+	{
+		"key": "ctrl+alt+j",
+		"command": "scrollLineDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+k",
+		"command": "cursorUp",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+k",
+		"command": "cursorUpSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+k",
+		"command": "cursorColumnSelectUp",
+		"when": "editorColumnSelection && textInputFocus"
+	},
+	{
+		"key": "ctrl+alt+k",
+		"command": "scrollLineUp",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "alt+l",
+		"command": "cursorRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+l",
+		"command": "cursorRightSelect",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+l",
+		"command": "cursorColumnSelectRight",
+		"when": "editorColumnSelection && textInputFocus"
+	},
+	{
+		"key": "ctrl+alt+l",
+		"command": "cursorWordRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+l",
+		"command": "cursorWordRightSelect",
+		"when": "textInputFocus"
+	},
 	// #endregion
 ]
