@@ -51,14 +51,26 @@
 		"**/.settings": false,
 		"**/.factorypath": false
 	},
+	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"search.exclude": {
 		"**/.git": true,
 		"**/.svn": true
 	},
+	"window.customMenuBarAltFocus": false,
+	"window.enableMenuBarMnemonics": false,
+	"window.menuBarVisibility": "compact",
+	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
+	"window.titleBarStyle": "custom",
+	"window.titleSeparator": " 🐱 ",
+	"workbench.colorTheme": "Community Material Theme High Contrast",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter.notebook.ipynb",
 		"*.pdf": "pdf.preview"
 	},
+	"workbench.editor.untitled.hint": "hidden",
+	"workbench.enableExperiments": false,
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.settings.enableNaturalLanguageSearch": false,
 	"vim.foldfix": true,
 	// #endregion
 
@@ -132,13 +144,6 @@
 	"latex-workshop.view.pdf.viewer": "tab",
 	// #endregion
 
-	// #region python
-	// prevent python from crashing when using venv
-	"python.experiments.optInto": [
-		"pythonDiscoveryModuleWithoutWatcher"
-	],
-	// #endregion
-
 	// #region liveshare config
 	"liveshare.allowGuestDebugControl": true,
 	"liveshare.allowGuestTaskControl": true,
@@ -167,19 +172,6 @@
 	// "telemetry.enableCrashReporter": false,
 	// "telemetry.enableTelemetry": false,
 	"telemetry.telemetryLevel": "off",
-	"workbench.enableExperiments": false,
-	"workbench.settings.enableNaturalLanguageSearch": false,
-	// #endregion
-
-	// #region window
-	"window.customMenuBarAltFocus": false,
-	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
-	"window.titleBarStyle": "custom",
-	"window.titleSeparator": " 🐱 ",
-	"workbench.colorTheme": "Community Material Theme High Contrast",
-	"workbench.editor.untitled.hint": "hidden",
-	"workbench.iconTheme": "material-icon-theme",
-	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"window.zoomLevel": 1,
 	// #endregion
 }
