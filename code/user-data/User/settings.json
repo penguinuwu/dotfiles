@@ -172,6 +172,10 @@
 	// "telemetry.enableCrashReporter": false,
 	// "telemetry.enableTelemetry": false,
 	"telemetry.telemetryLevel": "off",
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+	"python.insidersChannel": "off",
+	"python.languageServer": "Jedi",
 	"window.zoomLevel": 1,
 	// #endregion
 }

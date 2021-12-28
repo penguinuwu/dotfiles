@@ -117,6 +117,11 @@
 		"when": "config.latex-workshop.bind.altKeymap.enabled"
 	},
 	{
+		"key": "ctrl+l alt+x",
+		"command": "-workbench.view.extension.latex-workshop-activitybar",
+		"when": "config.latex-workshop.bind.altKeymap.enabled && viewContainer.workbench.view.extension.latex-workshop-activitybar.enabled"
+	},
+	{
 		"key": "ctrl+l ctrl+l",
 		"command": "-expandLineSelection",
 		"when": "textInputFocus && editorLangId =~ /latex|rsweave|jlweave/"
