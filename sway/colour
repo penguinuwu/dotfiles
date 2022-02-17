@@ -1,0 +1,40 @@
+# nord4
+set $foreground #D8DEE9
+# black
+set $background #000000
+# pink
+set $highlight #FFD1DC
+
+# nord1
+set $colour00 #3B4252
+# nord11
+set $colour01 #BF616A
+# nord14
+set $colour02 #A3BE8C
+# nord13
+set $colour03 #EBCB8B
+# nord9
+set $colour04 #81A1C1
+# nord15
+set $colour05 #B48EAD
+# nord8
+set $colour06 #88C0D0
+# nord5
+set $colour07 #E5E9F0
+
+# nord3
+set $colour08 #4C566A
+# nord11
+set $colour09 #BF616A
+# nord14
+set $colour10 #A3BE8C
+# nord13
+set $colour11 #EBCB8B
+# nord9
+set $colour12 #81A1C1
+# nord15
+set $colour13 #B48EAD
+# nord8
+set $colour14 #88C0D0
+# nord6
+set $colour15 #ECEFF4

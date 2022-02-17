@@ -1,0 +1,269 @@
+# Read `man 5 sway` for a complete reference.
+
+# imports
+include /etc/sway/config.d/*
+include colour
+
+# variables
+font pango:Hack Nerd Font 11
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term $TERMINAL
+set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
+set $scratchpad-menu ~/scripts/scratchpad-menu
+set $background-wallpaper ~/.config/sway/year-of-the-linux-desktop.png
+
+# <colourclass>			<border>	<backgrnd>	<text>		<indicator>	<child_border>
+client.focused			$foreground	$background	$foreground	$highlight	$highlight
+client.focused_inactive	$foreground	$background	$foreground	$colour00	$colour00
+client.unfocused		$foreground	$background	$foreground	$colour00	$colour00
+client.urgent			$foreground	$background	$foreground	$colour01	$colour01
+client.placeholder		$foreground	$background	$foreground	$background	$background
+client.background		$background
+
+# gaps and borders
+gaps top 2
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders none
+
+# screen configuration
+output * bg $background-wallpaper fill
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output eDP-1 scale 1.3
+
+# idle configuration
+exec swayidle -w \
+	timeout 300 "~/scripts/power-thing lock" \
+	timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+	timeout 900 "~/scripts/power-thing hibernate" \
+	before-sleep '~/scripts/power-thing lock' \
+	lock '~/scripts/power-thing lock'
+	# unlock 'pkill -SIGKILL swaylock'
+
+# input configuration
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# man 5 sway-input
+# man 7 xkeyboard-config
+input type:keyboard {
+	#xkb_options caps:swapescape
+	repeat_delay 200
+	repeat_rate 30
+}
+#input type:mouse {
+#	accel_profile flat
+#	natural_scroll enable
+#	pointer_accel 0
+#	#scroll_button 3
+#	scroll_factor 1
+#}
+input type:touchpad {
+	# https://askubuntu.com/a/178290
+	calibration_matrix 0 -1 1 1 0 0
+	#accel_profile flat
+	accel_profile adaptive
+	click_method clickfinger
+	drag enabled
+	drag_lock enabled
+	dwt disabled
+	middle_emulation disable
+	natural_scroll disabled
+	#pointer_accel 0
+	pointer_accel 0.2
+	scroll_button disable
+	scroll_factor 0.8
+	scroll_method two_finger
+	tap enabled
+	tap_button_map lrm
+}
+
+# key bindings
+# start a terminal
+bindsym $mod+return exec $term
+bindsym $mod+d exec $term
+
+# kill focused window
+bindsym $mod+shift+q kill
+
+# start your launcher
+bindsym $mod+Shift+d exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# screenshot
+bindsym $mod+Shift+s exec grimshot copy window
+bindsym $mod+Ctrl+Shift+s exec grimshot save window - | swappy -f - -o - | wl-copy
+bindsym Print exec grimshot copy screen
+
+# use pamixer to adjust volume in pipewire
+bindsym XF86AudioRaiseVolume exec pamixer --allow-boost --set-limit 200 --increase 2 && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86AudioLowerVolume exec pamixer --allow-boost --set-limit 200 --decrease 2 && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86AudioMute exec pamixer --toggle-mute && pkill -SIGRTMIN+2 i3blocks
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Switch to workspace
+bindsym $mod+Next workspace next
+bindsym $mod+Prior workspace prev
+bindsym $mod+KP_Next workspace next
+bindsym $mod+KP_Prior workspace prev
+bindsym $mod+grave workspace number 0
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+End move container to workspace next
+bindsym $mod+Shift+Home move container to workspace prev
+bindsym $mod+Shift+KP_End move container to workspace next
+bindsym $mod+Shift+KP_Home move container to workspace prev
+bindsym $mod+Shift+grave move container to workspace number 0
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Layout stuff
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Scratchpad
+# Move the currently focused window to the scratchpad
+bindsym $mod+tab exec swaymsg 'move scratchpad; exec pkill -SIGRTMIN+3 i3blocks'
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+Shift+tab exec $scratchpad-menu
+
+# Resizing containers
+bindsym $mod+Control+$left resize shrink width 10px
+bindsym $mod+Control+$down resize grow height 10px
+bindsym $mod+Control+$up resize shrink height 10px
+bindsym $mod+Control+$right resize grow width 10px
+bindsym $mod+Control+Shift+$left resize shrink width 20px
+bindsym $mod+Control+Shift+$down resize grow height 20px
+bindsym $mod+Control+Shift+$up resize shrink height 20px
+bindsym $mod+Control+Shift+$right resize grow width 20px
+
+bindsym $mod+Control+Left resize shrink width 10px
+bindsym $mod+Control+Down resize grow height 10px
+bindsym $mod+Control+Up resize shrink height 10px
+bindsym $mod+Control+Right resize grow width 10px
+bindsym $mod+Control+Shift+Left resize shrink width 20px
+bindsym $mod+Control+Shift+Down resize grow height 20px
+bindsym $mod+Control+Shift+Up resize shrink height 20px
+bindsym $mod+Control+Shift+Right resize grow width 20px
+
+bindsym $mod+Control+KP_Left resize shrink width 10px
+bindsym $mod+Control+KP_Down resize grow height 10px
+bindsym $mod+Control+KP_Up resize shrink height 10px
+bindsym $mod+Control+KP_Right resize grow width 10px
+bindsym $mod+Control+Shift+KP_Left resize shrink width 20px
+bindsym $mod+Control+Shift+KP_Down resize grow height 20px
+bindsym $mod+Control+Shift+KP_Up resize shrink height 20px
+bindsym $mod+Control+Shift+KP_Right resize grow width 20px
+
+### Power control
+bindsym $mod+Escape exec ~/scripts/power-thing-menu
+bindsym XF86PowerOff exec ~/scripts/power-thing-menu
+bindsym $mod+p exec ~/scripts/power-thing suspend
+
+### float windows
+for_window [title="Firefox - Choose User Profile" app_id="firefox"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
+for_window [title="^R Graphics:*"] floating enable
+
+### Status Bar
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+	position top
+	workspace_buttons yes
+	workspace_min_width 40
+	strip_workspace_numbers yes
+	tray_output none
+	# separator removed in i3blocks config
+	#separator_symbol "|"
+	status_command i3blocks
+
+	font pango:Hack Nerd Font 12
+	colors {
+		background $background
+		statusline $background
+		separator $highlight
+
+		# <colourclass>		<border>	<backgrnd>	<text>
+		focused_workspace	$background	$highlight	$background
+		active_workspace	$background	$highlight	$background
+		inactive_workspace	$background	$background	$foreground
+		urgent_workspace	$background	$colour01	$foreground
+		binding_mode		$background	$background	$foreground
+	}
+}
+
+# exec things
+exec_always import-gsettings
+#seat seat0 xcursor_theme 'oreo_spark_light_pink_cursors' 24
+#xwayland disable

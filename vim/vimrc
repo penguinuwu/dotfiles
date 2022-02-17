@@ -2,43 +2,106 @@ set runtimepath+=$VIMHOME,$VIMHOME/after
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('$VIMHOME/plugged')
+	" sensible settings
+	"Plug 'tpope/vim-sensible'
 
-" Declare the list of plugins.
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-" Plug 'ayu-theme/ayu-vim'
-" Plug 'joshdick/onedark.vim', { 'branch': 'main' }
-" Plug 'arcticicestudio/nord-vim'
-Plug 'tpope/vim-sensible'
-Plug 'mg979/vim-visual-multi'
-Plug 'tpope/vim-fugitive'
-" Plug 'ycm-core/YouCompleteMe'
-Plug 'scrooloose/nerdtree'
-" Plug 'powerline/powerline'
-Plug 'itchyny/lightline.vim'
-Plug 'airblade/vim-gitgutter'
+	" multi line edit
+	Plug 'mg979/vim-visual-multi'
 
-" List ends here. Plugins become visible to Vim after this call.
+	" git plugins
+	Plug 'airblade/vim-gitgutter'
+	Plug 'tpope/vim-fugitive'
+
+	" detect whitespace
+	Plug 'ntpeters/vim-better-whitespace'
+
+	" detect indent style
+	Plug 'tpope/vim-sleuth'
+
+	" detect indent
+	Plug 'preservim/nerdcommenter'
+
+	" auto complete
+	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+	" languages
+	Plug 'jalvesaq/Nvim-R', { 'branch': 'stable' }
+	Plug 'godlygeek/tabular'
+	Plug 'preservim/vim-markdown'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+	" auto formatter
+	Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
+	" cool bottom bar
+	Plug 'itchyny/lightline.vim'
+	"Plug 'powerline/powerline'
+
+	" themes
+	Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+	Plug 'soft-aesthetic/soft-era-vim'
+	"Plug 'ayu-theme/ayu-vim'
+	"Plug 'joshdick/onedark.vim', { 'branch': 'main' }
+	"Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
-set viminfo+=n$VIMHOME/viminfo
-" set backupdir=$VIMHOME/backup//
-" set directory=$VIMHOME/swap//
-" set undodir=$VIMHOME/undo//
-set nobackup
-set noswapfile
-set noundofile
+" cleanup
+" https://github.com/neovim/neovim/issues/6652#issuecomment-298717501
+if !has('nvim')
+	set viminfo+=n$VIMHOME/viminfo
+	set nobackup
+	set noswapfile
+	set noundofile
+	"set backupdir=$VIMHOME/backup//
+	"set directory=$VIMHOME/swap//
+	"set undodir=$VIMHOME/undo//
+endif
 
-syntax enable
+" kitty bugs
+" https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
+" https://www.reddit.com/r/KittyTerminal/comments/si15gk/kittys_representation_of_the_keyboard_menu_key/
+"set <F20>=57363u
 
-set number
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-
+" theme
 set termguicolors
 let g:material_theme_style = 'default'
 let g:lightline = { 'colorscheme': 'material_vim' }
 colorscheme material
+let g:indentLine_setColors = 0
 
-" https://sw.kovidgoyal.net/kitty/faq/#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
-let &t_ut=''
+" settings
+syntax enable
+set list
+set linebreak
+set number relativenumber
+set nu rnu
+set noexpandtab
+set autoindent
+set tabstop=4
+set shiftwidth=4
+let g:strip_whitespace_on_save = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+let R_assign = 0
+
+" bindings
+let mapleader = ' '
+vnoremap <C-c> "+y
+let g:VM_maps = {}
+let g:VM_maps["Add Cursor Down"] = '<C-A-j>'
+let g:VM_maps["Add Cursor Up"] = '<C-A-k>'
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+nnoremap <Leader>f <Plug>(Prettier)
+" doesnt work vnoremap <Leader>f <Plug>(Prettier)
+nnoremap <Leader>s :StripWhitespace<CR>
+
+if has('nvim')
+	tnoremap <Esc> <C-\><C-n>
+	tnoremap <A-h> <C-\><C-n>h
+	tnoremap <A-j> <C-\><C-n>j
+	tnoremap <A-k> <C-\><C-n>k
+	tnoremap <A-l> <C-\><C-n>l
+endif

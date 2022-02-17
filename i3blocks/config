@@ -7,87 +7,85 @@
 
 
 # Global properties
-border=#000000
 border_top=0
 border_left=0
 border_right=0
 border_bottom=0
 separator=false
 separator_block_width=0
+border=#FFD1DC
+color=#FFFFFF
+background=#000000
 
 [time]
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
-min_width=540
-color=#000000
-background=#FFD1DC
+min_width=320
+color=#FFD1DC
 
 [network]
 align=center
 command=$HOME/scripts/network-info
+# command=echo ' 999b 祝 999b'
 interval=5
 min_width=140
-color=#000000
-background=#F8C1BA
+color=#F8C1BA
 
 [scratchpad]
 align=center
 command=$HOME/scripts/scratchpad-info
+# command=echo ' 99'
 interval=once
 signal=3
-min_width=70
-color=#000000
-background=#F6D2AE
+min_width=80
+color=#F6D2AE
 
 [brightness]
 align=center
 command=$HOME/scripts/backlight-info
+# command=echo '盛 100'
 interval=once
 signal=1
-min_width=80
-color=#000000
-background=#FAEBA6
+min_width=70
+color=#FAEBA6
 
 [audio]
 align=center
 command=$HOME/scripts/audio-info
+# command=echo '墳 150%'
 interval=once
 signal=2
 min_width=80
-color=#000000
-background=#B5EECD
+color=#B5EECD
 
 [temp]
 align=center
-command=$HOME/scripts/temperature-info
+command=echo "$(acpi -t | perl -pe 's/^.*?(\d+\.\d*).*$/$1/')°C"
+# command=echo "100.0°C"
 interval=5
-min_width=70
-color=#000000
-background=#ACE8DC
+min_width=90
+color=#ACE8DC
 
 [memory]
 align=center
-command=free -m | awk 'NR==2{printf "%.1fG\n", $3/1024}'
+command=free -m | awk 'NR==2 { printf "%.1fG\n", $3/1000 }'
+# command=echo '32.0G'
 interval=5
 min_width=70
-color=#000000
-background=#B7DBF3
+color=#B7DBF3
 
 [battery]
 align=center
 command=$HOME/scripts/battery-info
+# command=echo '-99W 99:99 99%'
 interval=5
-min_width=160
-color=#000000
-background=#DDC5E7
+min_width=150
 
 [power]
-align=center
+align=right
 full_text=" "
-command=([[ $button -eq 3 ]] && i3-msg -q exec env-home) || ([[ $button -gt 0 ]] && i3-msg -q exec power-thing-menu)
+command=[[ $button -gt 0 ]] && swaymsg -q exec power-thing-menu
 interval=once
-color=#000000
-background=#DDC5E7
-#background=#FFFFFC
-
+min_width=25
+color=#FFFFFF

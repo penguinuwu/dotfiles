@@ -62,7 +62,7 @@
 	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
 	"window.titleBarStyle": "custom",
 	"window.titleSeparator": " 🐱 ",
-	"workbench.colorTheme": "Community Material Theme High Contrast",
+	"workbench.colorTheme": "Catppuccin",
 	"workbench.editorAssociations": {
 		"*.ipynb": "jupyter.notebook.ipynb",
 		"*.pdf": "pdf.preview"
@@ -172,10 +172,23 @@
 	// "telemetry.enableCrashReporter": false,
 	// "telemetry.enableTelemetry": false,
 	"telemetry.telemetryLevel": "off",
+	"window.zoomLevel": 1,
+	// #endregion
+
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 	"python.insidersChannel": "off",
 	"python.languageServer": "Jedi",
-	"window.zoomLevel": 1,
-	// #endregion
+	"files.associations": {
+		"*.rmd": "markdown"
+	},
+	"r.alwaysUseActiveTerminal": true,
+	"r.plot.defaults.colorTheme": "vscode",
+	"r.rpath.linux": "/usr/bin/R",
+	"r.rterm.linux": "/usr/bin/R",
+	"svelte.enable-ts-plugin": true,
+	"[svelte]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"workbench.startupEditor": "none",
 }
