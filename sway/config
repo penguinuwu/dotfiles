@@ -54,19 +54,22 @@ input type:keyboard {
 	repeat_delay 200
 	repeat_rate 30
 }
-#input type:mouse {
-#	accel_profile flat
-#	natural_scroll enable
-#	pointer_accel 0
-#	#scroll_button 3
-#	scroll_factor 1
-#}
+input type:pointer {
+	accel_profile flat
+	calibration_matrix 1 0 0 0 1 0
+	natural_scroll disable
+	pointer_accel 0
+	scroll_button button3
+	scroll_method on_button_down
+	scroll_factor 1
+}
 input type:touchpad {
 	# https://askubuntu.com/a/178290
 	calibration_matrix 0 -1 1 1 0 0
 	#accel_profile flat
 	accel_profile adaptive
-	click_method clickfinger
+	#click_method clickfinger
+	click_method none
 	drag enabled
 	drag_lock enabled
 	dwt disabled
@@ -75,7 +78,7 @@ input type:touchpad {
 	#pointer_accel 0
 	pointer_accel 0.2
 	scroll_button disable
-	scroll_factor 0.8
+	scroll_factor 0.9
 	scroll_method two_finger
 	tap enabled
 	tap_button_map lrm
@@ -264,6 +267,7 @@ bar {
 }
 
 # exec things
+exec sway-audio-idle-inhibit
 exec_always import-gsettings
 #seat seat0 xcursor_theme 'oreo_spark_light_pink_cursors' 24
 #xwayland disable
