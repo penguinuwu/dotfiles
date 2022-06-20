@@ -36,11 +36,18 @@ output * bg $background-wallpaper fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 scale 1.3
 
+# disable laptop's display when closed
+# https://www.reddit.com/r/swaywm/comments/oq50pd/comment/h7fn5wi/
+bindswitch lid:on output eDP-1 disable
+bindswitch lid:off output eDP-1 enable
+
 # idle configuration
 exec swayidle -w \
 	timeout 300 "~/scripts/power-thing lock" \
-	timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+	timeout 420 'swaymsg "output * dpms off"' \
 	timeout 900 "~/scripts/power-thing hibernate" \
+	resume 'swaymsg "output * dpms on"' \
+	after-resume 'swaymsg "output * enable"' \
 	before-sleep '~/scripts/power-thing lock' \
 	lock '~/scripts/power-thing lock'
 	# unlock 'pkill -SIGKILL swaylock'
@@ -65,7 +72,7 @@ input type:pointer {
 }
 input type:touchpad {
 	# https://askubuntu.com/a/178290
-	calibration_matrix 0 -1 1 1 0 0
+	calibration_matrix 20 0 0 0 20 0
 	#accel_profile flat
 	accel_profile adaptive
 	#click_method clickfinger
@@ -75,8 +82,8 @@ input type:touchpad {
 	dwt disabled
 	middle_emulation disable
 	natural_scroll disabled
-	#pointer_accel 0
-	pointer_accel 0.2
+	pointer_accel 0
+	#pointer_accel 0.1
 	scroll_button disable
 	scroll_factor 0.9
 	scroll_method two_finger
@@ -232,7 +239,7 @@ bindsym $mod+Control+Shift+KP_Right resize grow width 20px
 ### Power control
 bindsym $mod+Escape exec ~/scripts/power-thing-menu
 bindsym XF86PowerOff exec ~/scripts/power-thing-menu
-bindsym $mod+p exec ~/scripts/power-thing suspend
+bindsym $mod+p exec ~/scripts/power-thing hybrid-sleep
 
 ### float windows
 for_window [title="Firefox - Choose User Profile" app_id="firefox"] floating enable
@@ -267,7 +274,9 @@ bar {
 }
 
 # exec things
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec sway-audio-idle-inhibit
-exec_always import-gsettings
+exec_always ~/.config/sway/import-gsettings
 #seat seat0 xcursor_theme 'oreo_spark_light_pink_cursors' 24
 #xwayland disable
