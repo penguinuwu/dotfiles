@@ -102,6 +102,9 @@ bindsym $mod+shift+q kill
 # start your launcher
 bindsym $mod+Shift+d exec $menu
 
+# emoji picker
+bindsym $mod+period exec rofimoji
+
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
 # Despite the name, also works for non-floating windows.
@@ -115,12 +118,17 @@ bindsym $mod+Shift+r reload
 # screenshot
 bindsym $mod+Shift+s exec grimshot copy window
 bindsym $mod+Ctrl+Shift+s exec grimshot save window - | swappy -f - -o - | wl-copy
-bindsym Print exec grimshot copy screen
+bindsym Print exec grimshot save screen - | swappy -f - -o - | wl-copy
 
 # use pamixer to adjust volume in pipewire
 bindsym XF86AudioRaiseVolume exec pamixer --allow-boost --set-limit 200 --increase 2 && pkill -SIGRTMIN+2 i3blocks
 bindsym XF86AudioLowerVolume exec pamixer --allow-boost --set-limit 200 --decrease 2 && pkill -SIGRTMIN+2 i3blocks
 bindsym XF86AudioMute exec pamixer --toggle-mute && pkill -SIGRTMIN+2 i3blocks
+
+# control media player using mpris
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
 
 # Move your focus around
 bindsym $mod+$left focus left
