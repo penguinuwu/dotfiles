@@ -1,13 +1,12 @@
 daemonize
 ignore-empty-password
 font=NotoSansMono-Regular-Nerd-Font-Complete.ttf
-screenshot
-effect-blur=7x5
-effect-vignette=0.5:0.5
+image=~/.config/swaylock/harry.png
 fade-in=0.1
 clock
 timestr=%I:%M %p
 datestr=%a, %d %b
+indicator-x-position=1300
 indicator-idle-visible
 indicator-radius=100
 indicator-thickness=7
