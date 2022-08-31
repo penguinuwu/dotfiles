@@ -87,17 +87,34 @@ let R_assign = 0
 
 " bindings
 let mapleader = ' '
+
+" copy using ctrl+c or ctrl+shift+c
 vnoremap <C-c> "+y
+vnoremap <C-S-c> "+y
+
+" multi line
 let g:VM_maps = {}
 let g:VM_maps["Add Cursor Down"] = '<C-A-j>'
 let g:VM_maps["Add Cursor Up"] = '<C-A-k>'
+
+" coc stuff
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+if has('nvim')
+	inoremap <silent><expr> <c-space> coc#refresh()
+else
+	inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" prettier formatter
 nnoremap <Leader>f <Plug>(Prettier)
 " doesnt work vnoremap <Leader>f <Plug>(Prettier)
+
+" strip whitespaces
 nnoremap <Leader>s :StripWhitespace<CR>
 
+" terminal remaps
 if has('nvim')
 	tnoremap <Esc> <C-\><C-n>
 	tnoremap <A-h> <C-\><C-n>h
