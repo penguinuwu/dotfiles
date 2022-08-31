@@ -14,7 +14,7 @@ set $right l
 set $term $TERMINAL
 set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
 set $scratchpad-menu ~/scripts/scratchpad-menu
-set $background-wallpaper ~/.config/sway/year-of-the-linux-desktop.png
+set $background-wallpaper ~/.config/sway/harry.png
 
 # <colourclass>			<border>	<backgrnd>	<text>		<indicator>	<child_border>
 client.focused			$foreground	$background	$foreground	$highlight	$highlight
