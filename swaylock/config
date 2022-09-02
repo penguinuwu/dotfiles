@@ -6,17 +6,17 @@ fade-in=0.1
 clock
 timestr=%I:%M %p
 datestr=%a, %d %b
-indicator-x-position=1300
+#indicator-x-position=1300
 indicator-idle-visible
 indicator-radius=100
 indicator-thickness=7
 color=000000
 bs-hl-color=BF616A
-inside-color=E5E9F080
-inside-clear-color=88C0D080
-inside-caps-lock-color=EBCB8B80
-inside-ver-color=81A1C180
-inside-wrong-color=BF616A80
+inside-color=E5E9F0D0
+inside-clear-color=88C0D0D0
+inside-caps-lock-color=EBCB8BD0
+inside-ver-color=81A1C1D0
+inside-wrong-color=BF616AD0
 key-hl-color=A3BE8C
 layout-bg-color=E5E9F080
 layout-border-color=E5E9F080
