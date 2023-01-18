@@ -8,7 +8,8 @@ configuration {
 	max-history-size:	0;
 	kb-mode-next:		"KP_Right,Shift+Right,Control+Tab";
 	kb-mode-previous:	"KP_Left,Shift+Left,Control+ISO_Left_Tab";
-	kb-row-up:			"Up,KP_Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
+	kb-row-up:			"Up,KP_Up,Control+p,Super+ISO_Left_Tab";
+//	kb-row-up:			"Up,KP_Up,Control+p,ISO_Left_Tab,Super+ISO_Left_Tab";
 	kb-row-down:		"Down,KP_Down,Control+n,Super+Tab";
 	kb-page-prev:		"Page_Up,KP_Prior";
 	kb-page-next:		"Page_Down,KP_Next";
