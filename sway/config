@@ -116,6 +116,7 @@ bindsym $mod+Shift+r reload
 
 # screenshot
 bindsym --no-repeat $mod+Shift+s exec pgrep --exact grimshot || grimshot copy window
+bindsym --no-repeat $mod+Ctrl+Shift+s exec grimshot save window - | swappy -f - -o - | wl-copy
 bindsym --no-repeat Print exec grimshot save screen - | swappy -f - -o - | wl-copy
 
 # use pamixer to adjust volume in pipewire
