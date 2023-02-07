@@ -115,9 +115,8 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # screenshot
-bindsym $mod+Shift+s exec grimshot copy window
-bindsym $mod+Ctrl+Shift+s exec grimshot save window - | swappy -f - -o - | wl-copy
-bindsym Print exec grimshot save screen - | swappy -f - -o - | wl-copy
+bindsym --no-repeat $mod+Shift+s exec pgrep --exact grimshot || grimshot copy window
+bindsym --no-repeat Print exec grimshot save screen - | swappy -f - -o - | wl-copy
 
 # use pamixer to adjust volume in pipewire
 bindsym XF86AudioRaiseVolume exec pamixer --allow-boost --set-limit 200 --increase 2 && pkill -SIGRTMIN+2 i3blocks
