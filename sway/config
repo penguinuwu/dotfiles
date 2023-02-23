@@ -70,19 +70,15 @@ input type:pointer {
 	scroll_factor 1
 }
 input type:touchpad {
-	# https://askubuntu.com/a/178290
-	calibration_matrix 20 0 0 0 20 0
-	#accel_profile flat
-	accel_profile adaptive
-	#click_method clickfinger
-	click_method none
+	accel_profile flat
+	click_method button_areas
+	#click_method none
 	drag enabled
 	drag_lock enabled
 	dwt disabled
 	middle_emulation disable
-	natural_scroll disabled
-	pointer_accel 0
-	#pointer_accel 0.1
+	natural_scroll enable
+	pointer_accel 0.4
 	scroll_button disable
 	scroll_factor 0.9
 	scroll_method two_finger
@@ -102,7 +98,7 @@ bindsym $mod+shift+q kill
 bindsym $mod+Shift+d exec $menu
 
 # emoji picker
-bindsym $mod+period exec rofimoji
+bindsym $mod+period exec rofimoji --action copy
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
