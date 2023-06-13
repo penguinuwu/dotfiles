@@ -89,8 +89,8 @@ input type:pointer {
 	calibration_matrix 1 0 0 0 1 0
 	natural_scroll disable
 	pointer_accel 0
-	scroll_button button3
-	scroll_method on_button_down
+	scroll_button button2
+	scroll_method none
 	scroll_factor 1
 }
 input type:touchpad {
@@ -122,7 +122,7 @@ bindsym $mod+shift+q kill
 bindsym $mod+Shift+d exec $menu
 
 # emoji picker
-bindsym $mod+period exec rofimoji --action copy
+bindsym $mod+period exec rofimoji --action menu
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
