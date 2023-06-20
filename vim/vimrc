@@ -100,8 +100,8 @@ let g:VM_maps['Add Cursor Up'] = '<C-A-k>'
 " coc stuff
 call coc#config('suggest.noselect', 'true')
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-tab-and-s-tab-to-navigate-the-completion-list
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : '\<Tab>'
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : '\<S-Tab>'
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : '<Tab>'
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : '<S-Tab>'
 if has('nvim')
 	inoremap <silent><expr> <c-space> coc#refresh()
 else
