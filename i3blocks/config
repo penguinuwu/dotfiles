@@ -84,6 +84,7 @@ min_width=150
 
 [power]
 align=right
+# nf-linux-archlinux
 full_text=" "
 command=[[ $button -le 0 ]] || swaymsg -q -- exec power-thing-menu
 interval=once
