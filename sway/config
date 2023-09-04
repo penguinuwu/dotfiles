@@ -66,14 +66,14 @@ bindswitch lid:on output $monitor-0 disable
 bindswitch lid:off output $monitor-0 enable
 
 # idle configuration
-#exec swayidle -w \
-#	timeout 300 "~/scripts/power-thing lock" \
-#	timeout 420 'swaymsg "output * power off"' \
-#	resume 'swaymsg "output * power on"' \
-#	after-resume 'swaymsg "output * enable"' \
-#	before-sleep 'playerctl pause; ~/scripts/power-thing lock' \
-#	lock '~/scripts/power-thing lock' \
-#	unlock 'pkill -SIGKILL swaylock'
+exec swayidle -w \
+	timeout 300 "~/scripts/power-thing lock" \
+	timeout 420 'swaymsg "output * power off"' \
+	resume 'swaymsg "output * power on"' \
+	after-resume 'swaymsg "output * enable"' \
+	before-sleep 'playerctl pause; ~/scripts/power-thing lock' \
+	lock '~/scripts/power-thing lock' \
+	unlock 'pkill -SIGKILL swaylock'
 
 # input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -135,8 +135,8 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # screenshot
-bindsym --no-repeat $mod+Shift+s exec pgrep --exact grimshot || grimshot copy window
-bindsym --no-repeat $mod+Ctrl+Shift+s exec grimshot save window - | swappy -f - -o - | wl-copy
+bindsym --no-repeat $mod+Shift+s exec pgrep --full --exact 'grimshot' || grimshot copy anything
+bindsym --no-repeat $mod+Ctrl+Shift+s exec grimshot save anything - | swappy -f - -o - | wl-copy
 bindsym --no-repeat Print exec grimshot save screen - | swappy -f - -o - | wl-copy
 
 # use pamixer to adjust volume in pipewire
@@ -302,9 +302,8 @@ bar {
 }
 
 # exec things
-
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec sway-audio-idle-inhibit
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always pgrep --full --exact 'sway-audio-idle-inhibit' || sway-audio-idle-inhibit
 exec_always ~/.config/sway/import-gsettings
 #seat seat0 xcursor_theme 'oreo_spark_light_pink_cursors' 24
 #xwayland disable
