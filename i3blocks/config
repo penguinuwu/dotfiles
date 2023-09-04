@@ -21,7 +21,7 @@ background=#000000
 align=center
 command=date "+%a, %d %b - %I:%M:%S %p"
 interval=1
-min_width=320
+min_width=325
 color=#FFD1DC
 
 [network]
