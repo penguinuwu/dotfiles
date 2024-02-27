@@ -16,7 +16,7 @@ set $menu rofi -show drun
 set $scratchpad-menu ~/scripts/scratchpad-menu
 set $background-wallpaper ~/.config/sway/harry.png
 set $monitor-0 eDP-1
-set $monitor-1 DP-1
+set $monitor-1 DP-4
 
 # <colourclass>			<border>	<backgrnd>	<text>		<indicator>	<child_border>
 client.focused			$foreground	$background	$foreground	$highlight	$highlight
@@ -272,6 +272,15 @@ bindsym $mod+Control+Delete exec ~/scripts/power-thing lock
 for_window [title="Firefox - Choose User Profile" app_id="firefox"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [title="^R Graphics:*"] floating enable
+
+### inhibit mod key shortcuts
+# ideally we use https://github.com/swaywm/sway/pull/5021 but it doesnt work?
+# https://www.reddit.com/r/swaywm/comments/1auyq33/comment/kr7hez7/
+set $mode-inhibit-shortcuts "[Mod+Control+Shift+z] to exit"
+bindsym $mod+Control+Shift+z mode $mode-inhibit-shortcuts
+mode $mode-inhibit-shortcuts {
+	bindsym $mod+Control+Shift+z mode default
+}
 
 ### Status Bar
 # Read `man 5 sway-bar` for more information about this section.
