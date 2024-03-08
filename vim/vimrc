@@ -72,6 +72,7 @@ let g:indentLine_setColors = 0
 " settings
 syntax enable
 set list
+set listchars=tab:→\ ,trail:·
 set linebreak
 set number relativenumber
 set nu rnu
