@@ -71,7 +71,7 @@ exec swayidle -w \
 	timeout 420 'swaymsg "output * power off"' \
 	resume 'swaymsg "output * power on"' \
 	after-resume 'swaymsg "output * enable"' \
-	before-sleep 'playerctl pause; ~/scripts/power-thing lock' \
+	before-sleep 'playerctl --all-players pause; ~/scripts/power-thing lock' \
 	lock '~/scripts/power-thing lock' \
 	unlock 'pkill -SIGKILL swaylock'
 
@@ -145,9 +145,9 @@ bindsym XF86AudioLowerVolume exec pamixer --allow-boost --set-limit 200 --decrea
 bindsym XF86AudioMute exec pamixer --toggle-mute && pkill -SIGRTMIN+2 i3blocks
 
 # control media player using mpris
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPlay exec playerctl --player=spotify\,firefox\,%any play-pause
+bindsym XF86AudioPrev exec playerctl --player=spotify\,firefox\,%any previous
+bindsym XF86AudioNext exec playerctl --player=spotify\,firefox\,%any next
 
 # Move your focus around
 bindsym $mod+$left focus left
