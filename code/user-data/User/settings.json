@@ -1,6 +1,4 @@
 {
-	"C_Cpp.updateChannel": "Insiders",
-
 	// #region editor config
 	"[css]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -24,18 +22,21 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[python]": {
-		"editor.defaultFormatter": "ms-python.python"
+		"editor.defaultFormatter": "ms-python.black-formatter"
+	},
+	"[ruby]": {
+		"editor.defaultFormatter": "Shopify.ruby-lsp",
+		"files.insertFinalNewline": true
 	},
 	"[typescript]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"editor.acceptSuggestionOnEnter": "off",
 	"editor.bracketPairColorization.enabled": true,
-	"editor.fontFamily": "Hack Nerd Font",
+	"editor.fontFamily": "'Hack', monospace",
 	"editor.fontSize": 14,
 	"editor.insertSpaces": false,
 	"editor.lineNumbers": "on",
-	"editor.minimap.enabled": false,
 	"editor.snippetSuggestions": "top",
 	"editor.tabCompletion": "on",
 	"editor.tabSize": 4,
@@ -49,7 +50,8 @@
 		"**/.classpath": false,
 		"**/.project": false,
 		"**/.settings": false,
-		"**/.factorypath": false
+		"**/.factorypath": false,
+		"**/Thumbs.db": false
 	},
 	"react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
 	"search.exclude": {
@@ -59,15 +61,13 @@
 	"window.customMenuBarAltFocus": false,
 	"window.enableMenuBarMnemonics": false,
 	"window.menuBarVisibility": "compact",
-	"window.title": "${activeFolderShort}${separator}${activeEditorShort}",
+	"window.title": "${rootName}${separator}${activeEditorShort}${separator}${appName}",
 	"window.titleBarStyle": "custom",
 	"window.titleSeparator": " 🐱 ",
-	"workbench.colorTheme": "Catppuccin",
 	"workbench.editorAssociations": {
-		"*.ipynb": "jupyter.notebook.ipynb",
+		"*.ipynb": "default",
 		"*.pdf": "pdf.preview"
 	},
-	"workbench.editor.untitled.hint": "hidden",
 	"workbench.enableExperiments": false,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.settings.enableNaturalLanguageSearch": false,
@@ -77,10 +77,10 @@
 	// #region gitlens
 	"gitlens.codeLens.enabled": false,
 	"gitlens.currentLine.enabled": false,
-	"gitlens.defaultDateFormat": "YYYY/MM/DD, h:mmA",
+	"gitlens.defaultDateFormat": "YYYY/MM/DD, h:mma",
 	"gitlens.defaultDateShortFormat": "YYYY/MM/DD",
 	"gitlens.defaultDateStyle": "absolute",
-	"gitlens.defaultTimeFormat": "h:mmA",
+	"gitlens.defaultTimeFormat": "h:mma",
 	"gitlens.hovers.currentLine.over": "line",
 	"gitlens.hovers.enabled": false,
 	// #endregion
@@ -99,45 +99,30 @@
 
 	// #region java
 	"java.configuration.runtimes": [
+
 		{
 			"name": "JavaSE-1.8",
 			"path": "/usr/lib/jvm/java-8-openjdk/",
 			"default": false
-		},
-		{
-			"name": "JavaSE-11",
-			"path": "/usr/lib/jvm/java-11-openjdk/",
-			"default": true
-		},
-		{
-			"name": "JavaSE-15",
-			"path": "/usr/lib/jvm/java-15-openjdk/",
-			"default": false
 		}
 	],
-	"java.home": "/usr/lib/jvm/java-11-openjdk/",
+	"java.jdt.ls.java.home": "/usr/lib/jvm/default-runtime/",
 	"java.project.importOnFirstTimeStartup": "automatic",
-	"java.refactor.renameFromFileExplorer": "autoApply",
 	// #endregion
 
 	// #region latex
 	"latex-workshop.bibtex-format.tab": "tab",
-	"latex-workshop.bind.altKeymap.enabled": true,
 	"latex-workshop.latex.recipes": [
 		{
 			"name": "pog",
-			"tools": [
-				"pdf"
-			]
+			"tools": ["pdf"]
 		}
 	],
 	"latex-workshop.latex.tools": [
 		{
 			"name": "pdf",
 			"command": "pdf",
-			"args": [
-				"%DOC_EXT%"
-			],
+			"args": ["%DOC_EXT%"],
 			"env": {}
 		}
 	],
@@ -147,9 +132,7 @@
 	// #region liveshare config
 	"liveshare.allowGuestDebugControl": true,
 	"liveshare.allowGuestTaskControl": true,
-	"liveshare.allowInvites": "all",
 	"liveshare.anonymousGuestApproval": "accept",
-	"liveshare.authenticationProvider": "GitHub",
 	"liveshare.diagnosticLogging": true,
 	"liveshare.diagnosticMode": true,
 	"liveshare.openSharedServers": false,
@@ -172,15 +155,13 @@
 	// "telemetry.enableCrashReporter": false,
 	// "telemetry.enableTelemetry": false,
 	"telemetry.telemetryLevel": "off",
-	"window.zoomLevel": 1,
 	// #endregion
 
 	"editor.suggestSelection": "first",
 	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-	"python.insidersChannel": "off",
-	"python.languageServer": "Jedi",
 	"files.associations": {
-		"*.rmd": "markdown"
+		"*.rmd": "markdown",
+		"*.css": "css"
 	},
 	"r.alwaysUseActiveTerminal": true,
 	"r.plot.defaults.colorTheme": "vscode",
@@ -188,7 +169,52 @@
 	"r.rterm.linux": "/usr/bin/R",
 	"svelte.enable-ts-plugin": true,
 	"[svelte]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
+		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
 	"workbench.startupEditor": "none",
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+	},
+	"editor.unicodeHighlight.nonBasicASCII": false,
+	"fx-extension.prerequisiteCheck": {
+		"ngrok": false
+	},
+	"terminal.integrated.enableMultiLinePasteWarning": "never",
+	"latex-workshop.latex.autoBuild.run": "onSave",
+	"workbench.colorTheme": "Dark Pink",
+	"editor.largeFileOptimizations": false,
+	"boot-java.rewrite.reconcile": true,
+	"window.zoomLevel": 1,
+	"workbench.editor.empty.hint": "hidden",
+	"editor.cursorSmoothCaretAnimation": "on",
+	"editor.cursorBlinking": "phase",
+	"editor.inlayHints.enabled": "offUnlessPressed",
+	"rust-analyzer.inlayHints.maxLength": null,
+	"rubyLsp.formatter": "rubocop",
+	"terminal.integrated.allowChords": false,
+	"cmake.pinnedCommands": [
+		"workbench.action.tasks.configureTaskRunner",
+		"workbench.action.tasks.runTask"
+	],
+	"python.languageServer": "Pylance",
+	"python.defaultInterpreterPath": "/home/penguin/files/git/venv-python3.13/bin/python",
+	"debug.inlineValues": "on",
+	"debugpy.showPythonInlineValues": true,
+	"gitlens.home.preview.enabled": false,
+	"remote.defaultExtensionsIfInstalledLocally": [
+		"GitHub.copilot",
+		"GitHub.copilot-chat",
+		"GitHub.vscode-pull-request-github"
+	],
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"powermode.combo.location": "off",
+	"powermode.enabled": true,
 }

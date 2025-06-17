@@ -122,6 +122,26 @@
 		"when": "config.latex-workshop.bind.altKeymap.enabled && viewContainer.workbench.view.extension.latex-workshop-activitybar.enabled"
 	},
 	{
+		"key": "ctrl+l alt+v",
+		"command": "-latex-workshop.view",
+		"when": "config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /latex|rsweave|jlweave/"
+	},
+	{
+		"key": "ctrl+l alt+j",
+		"command": "-latex-workshop.synctex",
+		"when": "config.latex-workshop.bind.altKeymap.enabled && editorTextFocus && !virtualWorkspace && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+l alt+c",
+		"command": "-latex-workshop.clean",
+		"when": "config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /latex|rsweave|jlweave/"
+	},
+	{
+		"key": "ctrl+l alt+b",
+		"command": "-latex-workshop.build",
+		"when": "config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /latex|rsweave|jlweave/"
+	},
+	{
 		"key": "ctrl+l ctrl+l",
 		"command": "-expandLineSelection",
 		"when": "textInputFocus && editorLangId =~ /latex|rsweave|jlweave/"
@@ -441,11 +461,6 @@
 		"when": "editorColumnSelection && textInputFocus"
 	},
 	{
-		"key": "ctrl+alt+h",
-		"command": "cursorWordLeft",
-		"when": "textInputFocus"
-	},
-	{
 		"key": "ctrl+shift+alt+h",
 		"command": "cursorWordLeftSelect",
 		"when": "textInputFocus"
@@ -466,11 +481,6 @@
 		"when": "editorColumnSelection && textInputFocus"
 	},
 	{
-		"key": "ctrl+alt+j",
-		"command": "scrollLineDown",
-		"when": "textInputFocus"
-	},
-	{
 		"key": "alt+k",
 		"command": "cursorUp",
 		"when": "textInputFocus"
@@ -484,11 +494,6 @@
 		"key": "shift+alt+k",
 		"command": "cursorColumnSelectUp",
 		"when": "editorColumnSelection && textInputFocus"
-	},
-	{
-		"key": "ctrl+alt+k",
-		"command": "scrollLineUp",
-		"when": "textInputFocus"
 	},
 	{
 		"key": "alt+l",
@@ -506,14 +511,23 @@
 		"when": "editorColumnSelection && textInputFocus"
 	},
 	{
-		"key": "ctrl+alt+l",
-		"command": "cursorWordRight",
-		"when": "textInputFocus"
-	},
-	{
 		"key": "ctrl+shift+alt+l",
 		"command": "cursorWordRightSelect",
 		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+enter",
+		"command": "python.execInTerminal"
+	},
+	{
+		"key": "ctrl+alt+j",
+		"command": "-liveshare.join",
+		"when": "liveshare:state != 'Joined' && liveshare:state != 'Shared'"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "-dendron.lookupNote",
+		"when": "dendron:pluginActive"
 	},
 	// #endregion
 ]
