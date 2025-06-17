@@ -16,7 +16,7 @@ set $menu rofi -show drun
 set $scratchpad-menu ~/scripts/scratchpad-menu
 set $background-wallpaper ~/.config/sway/harry.png
 set $monitor-0 eDP-1
-set $monitor-1 DP-4
+set $monitor-1 DP-1
 
 # <colourclass>			<border>	<backgrnd>	<text>		<indicator>	<child_border>
 client.focused			$foreground	$background	$foreground	$highlight	$highlight
@@ -38,7 +38,7 @@ output * bg $background-wallpaper fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output $monitor-0 position 94,1080 scale 1.3
 # bens Gamin monitor 75hz
-output $monitor-1 position 0,0 mode 1920x1080@74.986Hz adaptive_sync on
+output $monitor-1 position 0,0 mode 1920x1080@74.986Hz adaptive_sync off
 
 # assign workspace
 workspace 0 output $monitor-0
@@ -69,8 +69,8 @@ bindswitch lid:off output $monitor-0 enable
 exec swayidle -w \
 	timeout 300 "~/scripts/power-thing lock" \
 	timeout 420 'swaymsg "output * power off"' \
-	resume 'swaymsg "output * power on"' \
-	after-resume 'swaymsg "output * enable"' \
+	resume 'swaymsg "output * power on"; swaymsg "output * enable"' \
+	after-resume 'swaymsg "output * power on"; swaymsg "output * enable"' \
 	before-sleep 'playerctl --all-players pause; ~/scripts/power-thing lock' \
 	lock '~/scripts/power-thing lock' \
 	unlock 'pkill -SIGKILL swaylock'
@@ -135,9 +135,13 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # screenshot
-bindsym --no-repeat $mod+Shift+s exec pgrep --full --exact 'grimshot' || grimshot copy anything
-bindsym --no-repeat $mod+Ctrl+Shift+s exec grimshot save anything - | swappy -f - -o - | wl-copy
+bindsym --no-repeat $mod+Shift+s exec pgrep --exact 'grimshot' || grimshot copy anything
+bindsym --no-repeat $mod+Ctrl+Shift+s exec pgrep --exact 'grimshot' || grimshot save anything - | swappy -f - -o - | wl-copy
 bindsym --no-repeat Print exec grimshot save screen - | swappy -f - -o - | wl-copy
+
+# stopwatch
+bindsym Pause exec button=4 ~/scripts/stopwatch
+bindsym XF86AudioMedia exec button=5 ~/scripts/stopwatch
 
 # use pamixer to adjust volume in pipewire
 bindsym XF86AudioRaiseVolume exec pamixer --allow-boost --set-limit 200 --increase 2 && pkill -SIGRTMIN+2 i3blocks
@@ -145,9 +149,9 @@ bindsym XF86AudioLowerVolume exec pamixer --allow-boost --set-limit 200 --decrea
 bindsym XF86AudioMute exec pamixer --toggle-mute && pkill -SIGRTMIN+2 i3blocks
 
 # control media player using mpris
-bindsym XF86AudioPlay exec playerctl --player=spotify\,firefox\,%any play-pause
-bindsym XF86AudioPrev exec playerctl --player=spotify\,firefox\,%any previous
-bindsym XF86AudioNext exec playerctl --player=spotify\,firefox\,%any next
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl next
 
 # Move your focus around
 bindsym $mod+$left focus left
@@ -272,6 +276,8 @@ bindsym $mod+Control+Delete exec ~/scripts/power-thing lock
 for_window [title="Firefox - Choose User Profile" app_id="firefox"] floating enable
 for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [title="^R Graphics:*"] floating enable
+# transparent floating windows
+for_window [floating] opacity 0.85
 
 ### inhibit mod key shortcuts
 # ideally we use https://github.com/swaywm/sway/pull/5021 but it doesnt work?
