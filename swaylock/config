@@ -2,7 +2,7 @@ daemonize
 ignore-empty-password
 font=NotoSansMono-Regular-Nerd-Font-Complete.ttf
 image=~/.config/swaylock/harry.png
-fade-in=0.1
+#fade-in=0.1 # https://github.com/jirutka/swaylock-effects/issues/62
 clock
 timestr=%I:%M %p
 datestr=%a, %d %b
