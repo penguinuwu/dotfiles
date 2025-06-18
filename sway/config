@@ -318,7 +318,14 @@ bar {
 
 # exec things
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+# inhibit idle
 exec_always pgrep --full --exact 'sway-audio-idle-inhibit' || sway-audio-idle-inhibit
+# slippi
+for_window [class="dolphin-emu"] inhibit_idle visible
+
+# theme
 exec_always ~/.config/sway/import-gsettings
 #seat seat0 xcursor_theme 'oreo_spark_light_pink_cursors' 24
+
 #xwayland disable
