@@ -273,11 +273,17 @@ bindsym XF86PowerOff exec ~/scripts/power-thing-menu
 bindsym $mod+Control+Delete exec ~/scripts/power-thing lock
 
 ### float windows
-for_window [title="Firefox - Choose User Profile" app_id="firefox"] floating enable
-for_window [app_id="org.gnome.Nautilus"] floating enable
-for_window [title="^R Graphics:*"] floating enable
-# transparent floating windows
-for_window [floating] opacity 0.85
+# set $floating_enable floating enable, opacity 1 # override does not work
+set $floating_enable floating enable
+for_window {
+	# transparent floating windows
+	[floating] opacity 0.85
+
+	[title="Firefox - Choose User Profile" app_id="firefox"] $floating_enable
+	[app_id="org.gnome.Nautilus"] $floating_enable
+	[app_id="org.kde.dolphin"] $floating_enable
+	[title="^R Graphics:*"] $floating_enable
+}
 
 ### inhibit mod key shortcuts
 # ideally we use https://github.com/swaywm/sway/pull/5021 but it doesnt work?
