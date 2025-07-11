@@ -44,8 +44,8 @@ output $monitor-1 position 0,0 mode 1920x1080@74.986Hz adaptive_sync off
 workspace 0 output $monitor-0
 workspace 1 output $monitor-0
 workspace 2 output $monitor-0
-workspace 3 output $monitor-1
-workspace 4 output $monitor-1
+workspace 3 output $monitor-0
+workspace 4 output $monitor-0
 workspace 5 output $monitor-1
 workspace 6 output $monitor-1
 workspace 7 output $monitor-1
@@ -324,6 +324,8 @@ bar {
 
 # exec things
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+exec_always pgrep --full --exact 'autotiling' || autotiling
 
 # inhibit idle
 exec_always pgrep --full --exact 'sway-audio-idle-inhibit' || sway-audio-idle-inhibit
