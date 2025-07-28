@@ -325,7 +325,8 @@ bar {
 # exec things
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
-exec_always pgrep --full --exact 'autotiling' || autotiling
+#exec_always pgrep --full --exact 'autotiling' || autotiling
+# ... autotiling script is kinda buggy tbh
 
 # inhibit idle
 exec_always pgrep --full --exact 'sway-audio-idle-inhibit' || sway-audio-idle-inhibit
