@@ -136,8 +136,16 @@ floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 
 # screenshot
-bindsym --no-repeat $mod+Shift+s exec pgrep --exact 'grimshot' || grimshot copy anything
-bindsym --no-repeat $mod+Ctrl+Shift+s exec pgrep --exact 'grimshot' || grimshot save anything - | swappy -f - -o - | wl-copy
+bindsym --no-repeat $mod+Shift+s exec pgrep --exact 'wayfreeze' || wayfreeze --hide-cursor --after-freeze-cmd 'grimshot copy anything; killall wayfreeze'
+bindsym --no-repeat $mod+Ctrl+Shift+s exec pgrep --exact 'wayfreeze' || wayfreeze --hide-cursor --after-freeze-cmd \
+	'grimshot save anything - | { cat; killall wayfreeze; } | { read -r -N 1 byte && cat <(printf "%s" "$byte") <(cat) | swappy -f - -o - | wl-copy; }'
+	# the long command groups are to ensure we don't clear the clipboard on screenshot cancel !!!
+	# the first command group uses `cat` to read stdin and block `killall` until `grimshot` completes its output
+	# the second command group first attempts to read 1 single byte and store it in `$byte`
+	# if grimshot is cancelled, its stdout is empty
+	# so if the read fails, it will cancel the following `swappy` and `wl-copy` commands
+	# and if it succeeds, it will pipe the 1 consumed byte (`printf`) and the rest of the output (`cat`) downstream
+	# note we use `printf` because `echo` is not guaranteed to keep binary text unmodified
 bindsym --no-repeat Print exec grimshot save screen - | swappy -f - -o - | wl-copy
 
 # stopwatch
