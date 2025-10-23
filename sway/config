@@ -81,6 +81,7 @@ exec swayidle -w \
 # man 7 xkeyboard-config
 input type:keyboard {
 	#xkb_options caps:swapescape
+	#xkb_options altwin:swap_lalt_lwin
 	repeat_delay 200
 	repeat_rate 30
 }
@@ -95,8 +96,8 @@ input type:pointer {
 }
 input type:touchpad {
 	accel_profile flat
-	click_method button_areas
-	#click_method none
+	#click_method button_areas
+	click_method none
 	drag enabled
 	drag_lock enabled
 	dwt disabled
